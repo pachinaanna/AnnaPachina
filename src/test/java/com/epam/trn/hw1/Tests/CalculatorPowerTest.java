@@ -1,23 +1,13 @@
-package com.epam.trn.hw1;
+package com.epam.trn.hw1.Tests;
 
-import org.testng.annotations.DataProvider;
+import com.epam.trn.hw1.DataProviders.DataProviders;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertEquals;
 
 public class CalculatorPowerTest extends AbstractCalculatorTest {
 
-    @DataProvider
-    public Object[][] powerDataSet() {
-        return new Object[][] {
-                {2.5, 3.0, 15.625},
-                {-2.0, 0, 1.0},
-                {2.0, -1, 0.5}
-
-        };
-    }
-
-    @Test(dataProvider = "powerDataSet")
+    @Test(dataProviderClass = DataProviders.class, dataProvider = "powerDataSet")
     public void powerTest(double a, double b, double expected) {
         double actual = calculator.pow(a, b);
         assertEquals(actual, expected, 0.0001);

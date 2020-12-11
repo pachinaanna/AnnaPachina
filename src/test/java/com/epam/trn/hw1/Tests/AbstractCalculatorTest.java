@@ -1,4 +1,4 @@
-package com.epam.trn.hw1;
+package com.epam.trn.hw1.Tests;
 
 import com.epam.tat.module4.Calculator;
 import org.testng.annotations.AfterMethod;

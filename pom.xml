@@ -18,7 +18,7 @@
         <profile>
             <id>All-tests</id>
             <activation>
-                <activeByDefault>true</activeByDefault>
+                <activeByDefault>false</activeByDefault>
             </activation>
             <properties>
                 <suite.file>${project.basedir}/src/test/resources/AllOperations.xml</suite.file>
@@ -38,7 +38,7 @@
         <profile>
             <id>Sum-and-sub</id>
             <activation>
-                <activeByDefault>false</activeByDefault>
+                <activeByDefault>true</activeByDefault>
             </activation>
             <properties>
                 <suite.file>${project.basedir}/src/test/resources/SumAndSubtract.xml</suite.file>
