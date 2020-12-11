@@ -12,7 +12,8 @@ public class CalculatorSubtractionTest extends AbstractCalculatorTest {
         return new Object[][] {
                 {6.5, 3.0, 3.5},
                 {0, 2.0, -2.0},
-                {-3.5, -3.2, -0.3},
+                {-3.5, -3.2, -0.3}
+
         };
     }
 

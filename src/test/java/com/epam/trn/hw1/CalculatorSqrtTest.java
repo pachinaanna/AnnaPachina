@@ -12,7 +12,7 @@ public class CalculatorSqrtTest extends AbstractCalculatorTest {
         return new Object[][] {
                 {16.0, 4.0},
                 {3.0, 1.732},
-                {0, 0},
+                {0, 0}
 
         };
     }

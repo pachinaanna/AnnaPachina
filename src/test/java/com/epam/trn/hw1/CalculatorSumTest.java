@@ -14,6 +14,7 @@ public class CalculatorSumTest extends AbstractCalculatorTest {
                 {3.1, 3.5, 6.6},
                 {-2.0, 4.0, 2.0},
                 {-2.0, -3.0, -5.0}
+
         };
     }
 
