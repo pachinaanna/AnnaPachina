@@ -8,7 +8,7 @@ import static org.testng.Assert.assertEquals;
 public class CalculatorSubtractionTest extends AbstractCalculatorTest {
 
     @DataProvider
-    public Object[][] subtractionDataSet () {
+    public Object[][] subtractionDataSet() {
         return new Object[][] {
                 {6.5, 3.0, 3.5},
                 {0, 2.0, -2.0},

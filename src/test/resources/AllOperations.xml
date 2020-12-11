@@ -1,39 +1,9 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 <suite name="Test for all calculator operations">
 
-    <test name="Division test">
-        <classes>
-            <class name="com.epam.trn.hw1.CalculatorDivisionTest"/>
-        </classes>
-    </test>
-
-    <test name="Power test">
-        <classes>
-            <class name="com.epam.trn.hw1.CalculatorPowerTest"/>
-        </classes>
-    </test>
-
-    <test name="Multiply test">
-        <classes>
-            <class name="com.epam.trn.hw1.CalculatorMultiplyTest"/>
-        </classes>
-    </test>
-
-    <test name="Sqrt test">
-        <classes>
-            <class name="com.epam.trn.hw1.CalculatorSqrtTest"/>
-        </classes>
-    </test>
-
-    <test name="Subtraction test">
-        <classes>
-            <class name="com.epam.trn.hw1.CalculatorSubtractionTest"/>
-        </classes>
-    </test>
-
-    <test name="Sum test">
-        <classes>
-            <class name="com.epam.trn.hw1.CalculatorSumTest"/>
-        </classes>
+    <test name="All operations">
+        <packages>
+            <package name="com.epam.trn.hw1.*"/>
+        </packages>
     </test>
 </suite>
