@@ -3,8 +3,8 @@
 
     <test name="Multiply and division test">
         <classes>
-            <class name="com.epam.trn.hw1.Tests.CalculatorDivisionTest"/>
-            <class name="com.epam.trn.hw1.Tests.CalculatorMultiplyTest"/>
+            <class name="com.epam.trn.hw1.tests.CalculatorDivisionTest"/>
+            <class name="com.epam.trn.hw1.tests.CalculatorMultiplyTest"/>
         </classes>
     </test>
 </suite>

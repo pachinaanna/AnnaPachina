@@ -3,8 +3,8 @@
 
     <test name="Sum and subtraction test">
         <classes>
-            <class name="com.epam.trn.hw1.Tests.CalculatorSumTest"/>
-            <class name="com.epam.trn.hw1.Tests.CalculatorSubtractionTest"/>
+            <class name="com.epam.trn.hw1.tests.CalculatorSumTest"/>
+            <class name="com.epam.trn.hw1.tests.CalculatorSubtractionTest"/>
         </classes>
     </test>
 </suite>

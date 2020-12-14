@@ -1,4 +1,4 @@
-package com.epam.trn.hw1.DataProviders;
+package com.epam.trn.hw1.data_providers;
 
 import org.testng.annotations.DataProvider;
 

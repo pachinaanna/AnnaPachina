@@ -1,6 +1,6 @@
-package com.epam.trn.hw1.Tests;
+package com.epam.trn.hw1.tests;
 
-import com.epam.trn.hw1.DataProviders.DataProviders;
+import com.epam.trn.hw1.data_providers.DataProviders;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertEquals;
