@@ -52,7 +52,7 @@ public class Exercise2 extends AbstractTest {
         // Data: -
         // Exp. result: Page is opened
 
-        WebElement buttonService = webDriver.findElement(By.xpath("//ul[contains(@class, 'm-l8')]/li[3]"));
+        WebElement buttonService = webDriver.findElement(By.cssSelector(".m-l8 > li:nth-child(3) > a"));
         buttonService.click();
         WebElement buttonDifElements = webDriver.findElement(By.xpath("//ul[@class='dropdown-menu']/li[8]"));
         buttonDifElements.click();
@@ -62,11 +62,10 @@ public class Exercise2 extends AbstractTest {
         // Data: Water, Wind
         // Exp. result: Elements are checked
 
-
-        WebElement checkWater = webDriver.findElement(By.xpath("//label[@class='label-checkbox'][1]"));
+        WebElement checkWater = webDriver.findElement(By.cssSelector(".label-checkbox:nth-child(1)"));
         checkWater.click();
         softAssert.assertTrue(checkWater.isSelected());
-        WebElement checkWind = webDriver.findElement(By.xpath("//label[@class='label-checkbox'][2]"));
+        WebElement checkWind = webDriver.findElement(By.cssSelector(".label-checkbox:nth-child(2)"));
         checkWind.click();
         softAssert.assertTrue(checkWind.isSelected());
 
@@ -74,7 +73,7 @@ public class Exercise2 extends AbstractTest {
         // Data: Selen
         // Exp. result: Element is checked
 
-        WebElement radioSelen = webDriver.findElement(By.xpath("//label[@class='label-radio'][4]"));
+        WebElement radioSelen = webDriver.findElement(By.cssSelector(".label-radio:nth-child(4)"));
         radioSelen.click();
         softAssert.assertTrue(radioSelen.isSelected());
 
@@ -104,7 +103,7 @@ public class Exercise2 extends AbstractTest {
             String logTextFalse = checkbox.getText() + ": condition changed to false";
             checkbox.click();
             checkbox.click();
-            List <WebElement> logs = webDriver.findElements(By.xpath("//ul[@class='panel-body-list logs']/li"));
+            List <WebElement> logs = webDriver.findElements(By.cssSelector(".panel-body-list.logs > li"));
             softAssert.assertTrue(logTextTrue.contains(logs.get(0).getText()));
             softAssert.assertTrue(logTextFalse.contains(logs.get(1).getText()));
 
@@ -114,7 +113,7 @@ public class Exercise2 extends AbstractTest {
         for(WebElement radio : activeRadio) {
             String logText = "metal: value changed to " + radio.getText();
             radio.click();
-            List <WebElement> logs = webDriver.findElements(By.xpath("//ul[@class='panel-body-list logs']/li"));
+            List <WebElement> logs = webDriver.findElements(By.cssSelector(".panel-body-list.logs > li"));
             softAssert.assertTrue(logText.contains(logs.get(0).getText()));
 
         }
@@ -124,7 +123,7 @@ public class Exercise2 extends AbstractTest {
         for(WebElement color : colors) {
             String logText = "Colors: value changed to " + color.getText();
             color.click();
-            List <WebElement> logs = webDriver.findElements(By.xpath("//ul[@class='panel-body-list logs']/li"));
+            List <WebElement> logs = webDriver.findElements(By.cssSelector(".panel-body-list.logs > li"));
             softAssert.assertTrue(logText.contains(logs.get(0).getText()));
 
         }

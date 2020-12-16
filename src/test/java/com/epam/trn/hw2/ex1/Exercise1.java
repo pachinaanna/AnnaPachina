@@ -53,22 +53,22 @@ public class Exercise1 extends AbstractTest {
         // Data: "HOME", "CONTACT FORM", "SERVICE", "METALS & COLORS"
         // Exp. results: Menu buttons are displayed and have proper texts
 
-        List<WebElement> buttons = webDriver.findElements(By.xpath("//ul[contains(@class, 'm-l8')]/li"));
+        List<WebElement> buttons = webDriver.findElements(By.cssSelector("ul.m-l8 > li"));
         softAssert.assertEquals(buttons.size(), 4);
         for (WebElement button : buttons) {
             softAssert.assertTrue(button.isDisplayed());
         }
 
-        WebElement buttonHome = webDriver.findElement(By.xpath("//ul[contains(@class, 'm-l8')]/li[1]"));
+        WebElement buttonHome = webDriver.findElement(By.cssSelector(".m-l8 > li:nth-child(1) > a"));
         softAssert.assertEquals(buttonHome.getText(), "HOME");
 
-        WebElement buttonContactForm = webDriver.findElement(By.xpath("//ul[contains(@class, 'm-l8')]/li[2]"));
+        WebElement buttonContactForm = webDriver.findElement(By.cssSelector(".m-l8 > li:nth-child(2) > a"));
         softAssert.assertEquals(buttonContactForm.getText(), "CONTACT FORM");
 
-        WebElement buttonService = webDriver.findElement(By.xpath("//ul[contains(@class, 'm-l8')]/li[3]"));
+        WebElement buttonService = webDriver.findElement(By.cssSelector(".m-l8 > li:nth-child(3) > a"));
         softAssert.assertEquals(buttonService, "SERVICE");
 
-        WebElement buttonMetals = webDriver.findElement(By.xpath("//ul[contains(@class, 'm-l8')]/li[4]"));
+        WebElement buttonMetals = webDriver.findElement(By.cssSelector(".m-l8 > li:nth-child(4) > a"));
         softAssert.assertEquals(buttonMetals, "METALS & COLORS");
 
         // Step 6: Assert that there are 4 images on the Index Page and they are displayed
