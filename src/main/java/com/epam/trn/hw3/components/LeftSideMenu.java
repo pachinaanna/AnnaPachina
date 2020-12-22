@@ -12,7 +12,7 @@ public class LeftSideMenu extends AbstractPageComposite {
         super(webDriver);
     }
 
-    @FindBy(className="sidebar-menu")
+    @FindBy(css = ".sidebar-menu > li")
     private List<WebElement> leftSideItems;
 
     public List<WebElement> getLeftSideItems() {

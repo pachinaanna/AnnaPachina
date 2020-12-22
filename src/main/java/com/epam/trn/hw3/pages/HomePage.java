@@ -24,45 +24,40 @@ public class HomePage extends AbstractPage {
     }
 
     public boolean checkHeaderButtonsText(String buttonText) {
-       List<WebElement> headerButtons = headerMenu.getHeaderButtons();
-        for (WebElement button : headerButtons) {
-            if (buttonText.equals(button.getText())) {
-                return true;
-            }
-        }
-        return false;
+       return findAndCompare(headerMenu.getHeaderButtons(), buttonText);
     }
 
-    public boolean checkItemsText(String itemText) {
-        List<WebElement> items = leftSideMenu.getLeftSideItems();
-        for(WebElement item : items) {
-            if(itemText.equals(item.getText())) {
-                return true;
-            }
-        }
-        return false;
+    public boolean checkLeftSideItemsText(String itemText) {
+        return findAndCompare(leftSideMenu.getLeftSideItems(), itemText);
     }
 
-    public boolean checkImagesText(String text) {
-        List<WebElement> images = rowBenefits.getImages();
-        for(WebElement image : images) {
-            if(text.equals(image.getText())) {
-                return true;
-            }
-        }
-        return false;
+    public boolean checkBenefitsText(String text) {
+        return findAndCompare(rowBenefits.getBenefitsText(), text);
     }
 
-    public void goToServices(String serviceName) {
+    public void goToDifferentElements() {
         headerMenu.getService().click();
-        List<WebElement> services = headerMenu.getServices();
-        for(WebElement service : services) {
-            if(serviceName.equals(service.getText())) {
-                service.click();
-            }
+        headerMenu.getDifferentElementsService().click();
+    }
+
+    public int quantityOfHeaderMenuItems() {
+            return headerMenu.getHeaderButtons().size();
         }
 
+    public int quantityOfLeftSideMenuItems() {
+            return leftSideMenu.getLeftSideItems().size();
+        }
 
+    public int quantityOfIcons() {
+            return rowBenefits.getIcons().size();
+        }
 
+    public int quantityOfBenefitsText() {
+        return rowBenefits.getBenefitsText().size();
     }
+
+    public List<WebElement> getIcons() {
+            return rowBenefits.getIcons();
+        }
+
 }

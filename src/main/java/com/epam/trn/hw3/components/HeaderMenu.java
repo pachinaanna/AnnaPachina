@@ -40,21 +40,14 @@ public class HeaderMenu extends AbstractPageComposite {
         loginButton.click();
     }
 
-    @FindBy(className = "logout")
-    private WebElement logoutButton;
-
-    public WebElement getLogoutButton() {
-        return logoutButton;
-    }
-
     @FindBy(id = "user-name")
-    private WebElement userName;
+    private WebElement loggedUser;
 
-    public WebElement getUserName() {
-        return userName;
+    public WebElement getLoggedUser() {
+        return loggedUser;
     }
 
-    @FindBy(css = "ul.m-l8 > li")
+    @FindBy(css = ".m-l8 > li")
     private List<WebElement> headerButtons;
 
     public List<WebElement> getHeaderButtons() {
@@ -68,13 +61,19 @@ public class HeaderMenu extends AbstractPageComposite {
         return service;
     }
 
-    @FindBy(xpath = "//ul[@class='dropdown-menu']/li")
-    public List<WebElement> services;
+    @FindBy(xpath = "//ul[@class='dropdown-menu']/li[8]")
+    public WebElement differentElementsService;
 
-    public List<WebElement> getServices() {
-        return services;
+    public WebElement getDifferentElementsService() {
+        return differentElementsService;
     }
 
+    @FindBy(xpath = "//ul[@class='dropdown-menu']/li")
+    public List<WebElement> listOfServices;
+
+    public List<WebElement> getServices() {
+        return listOfServices;
+    }
 
 }
 

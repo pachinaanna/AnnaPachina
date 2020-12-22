@@ -13,10 +13,18 @@ public class RowBenefits extends AbstractPageComposite {
     }
 
     @FindBy(css = ".benefit-txt")
-    private List<WebElement> images;
+    private List<WebElement> benefitText;
 
-    public List<WebElement> getImages() {
-        return images;
+    public List<WebElement> getBenefitsText() {
+        return benefitText;
     }
+
+    @FindBy(css = ".icons-benefit")
+    private List<WebElement> icons;
+
+    public List<WebElement> getIcons() {
+        return icons;
+    }
+
 
 }

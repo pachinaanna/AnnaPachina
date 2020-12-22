@@ -6,9 +6,7 @@ import com.epam.trn.hw3.components.LeftSideMenu;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import java.io.IOException;
 import java.util.List;
-import java.util.Properties;
 
 public class AbstractPage extends AbstractPageComposite {
 
@@ -22,12 +20,23 @@ public class AbstractPage extends AbstractPageComposite {
     }
 
     public void findAndClick(List<WebElement> elements, String elementName) {
-        for(WebElement check : elements) {
-            if(elementName.equals(check.getText())) {
-                check.click();
+        for(WebElement element : elements) {
+            if(elementName.equals(element.getText())) {
+                element.click();
             }
         }
     }
 
+    public boolean findAndCompare(List<WebElement> elements, String elementName) {
+        for(WebElement element : elements)
+            if(elementName.equals(element.getText())) {
+                return true;
+            }
+        return false;
+    }
 
+    public void doubleClickElements(WebElement element) {
+            element.click();
+            element.click();
+    }
 }

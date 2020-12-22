@@ -6,15 +6,16 @@ import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 
-public class Logs extends AbstractPageComposite {
+public class LogsPanel extends AbstractPageComposite {
 
-    public Logs(WebDriver webDriver) {
+    public LogsPanel(WebDriver webDriver) {
         super(webDriver);
     }
 
     @FindBy(css = ".panel-body-list.logs > li")
     private List<WebElement> logs;
 
-
-
+    public List<WebElement> getLogs() {
+        return logs;
+    }
 }

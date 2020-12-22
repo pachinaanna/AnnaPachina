@@ -2,10 +2,12 @@ package com.epam.trn.hw3.pages;
 
 import com.epam.trn.hw3.components.Checkbox;
 import com.epam.trn.hw3.components.ColorsMenu;
+import com.epam.trn.hw3.components.LogsPanel;
 import com.epam.trn.hw3.components.Radio;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class DifferentElementsPage extends AbstractPage {
@@ -13,6 +15,7 @@ public class DifferentElementsPage extends AbstractPage {
     protected Checkbox checkbox = new Checkbox(webDriver);
     protected Radio radio = new Radio(webDriver);
     protected ColorsMenu colorsMenu = new ColorsMenu(webDriver);
+    protected LogsPanel logsPanel = new LogsPanel(webDriver);
 
     public DifferentElementsPage(WebDriver webDriver) {
         super(webDriver);
@@ -40,6 +43,53 @@ public class DifferentElementsPage extends AbstractPage {
         }
         return null;
     }
+
+    public WebElement getRadio(String checkboxName) {
+        for(WebElement item : radio.getRadioButtons()) {
+            if(checkboxName.equals(item.getText())) {
+                return item;
+            }
+        }
+        return null;
+    }
+
+    public WebElement getCheckbox(String checkboxName) {
+        for(WebElement item : checkbox.getCheckboxes()) {
+            if(checkboxName.equals(item.getText())) {
+                return item;
+            }
+        }
+        return null;
+    }
+
+    public String expectedLog(String logText, WebElement element) {
+        if(element.getText().equals("Water") || element.getText().equals("Wind")
+                || element.getText().equals("Earth") || element.getText().equals("Fire")) {
+            return element.getText() + logText;
+        }
+        else {
+            return logText + element.getText();
+        }
+    }
+
+    public List<String> actualLog(WebElement element) {
+        doubleClickElements(element);
+        List<String> list = new ArrayList<>();
+        for (WebElement item : logsPanel.getLogs()) {
+            list.add(item.getText());
+        }
+        return list;
+    }
+
+    public boolean compareLogs(WebElement element, String logText) {
+        String expected = expectedLog(logText, element);
+        List<String> actual = actualLog(element);
+        if(expected.contains("false")) {
+            return expected.contains(actual.get(1));
+        }
+        return expected.contains(actual.get(0));
+    }
+
 
 }
 
