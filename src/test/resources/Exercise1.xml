@@ -3,7 +3,7 @@
 
     <test name="Exercise 1 tests">
         <packages>
-            <package name="com.epam.trn.hw3.ex1.*"/>
+            <package name="com.epam.trn.hw4.ex1.*"/>
         </packages>
     </test>
 </suite>

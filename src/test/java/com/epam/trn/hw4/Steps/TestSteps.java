@@ -1,4 +1,4 @@
-package com.epam.trn.hw3.Steps;
+package com.epam.trn.hw4.Steps;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

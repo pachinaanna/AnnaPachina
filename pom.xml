@@ -6,7 +6,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.epam.trn.qa</groupId>
-    <artifactId>com.epam.trn.qa.hw3.Anna_Pachina</artifactId>
+    <artifactId>com.epam.trn.qa.hw4.Anna_Pachina</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
@@ -26,7 +26,7 @@
         <profile>
             <id>exercise-1</id>
             <activation>
-                <activeByDefault>true</activeByDefault>
+                <activeByDefault>false</activeByDefault>
             </activation>
             <properties>
                 <suite.file>${project.basedir}/src/test/resources/Exercise1.xml</suite.file>
@@ -42,6 +42,17 @@
                 <suite.file>${project.basedir}/src/test/resources/Exercise2.xml</suite.file>
             </properties>
         </profile>
+
+        <profile>
+            <id>all-tests</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <suite.file>${project.basedir}/src/test/resources/AllTestsHW4.xml</suite.file>
+            </properties>
+        </profile>
+
     </profiles>
 
     <dependencies>
@@ -56,7 +67,6 @@
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
             <version>${selenium.version}</version>
-<!--            <scope>tesqw!q12t</scope>-->
         </dependency>
 
         <dependency>

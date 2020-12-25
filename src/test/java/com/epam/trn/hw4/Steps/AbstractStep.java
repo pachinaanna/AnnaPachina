@@ -1,4 +1,4 @@
-package com.epam.trn.hw3.Steps;
+package com.epam.trn.hw4.Steps;
 
 import com.epam.trn.hw4.components.HeaderMenu;
 import com.epam.trn.hw4.components.Iframe;

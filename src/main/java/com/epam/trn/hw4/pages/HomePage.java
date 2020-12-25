@@ -1,7 +1,7 @@
-package com.epam.trn.hw3.pages;
+package com.epam.trn.hw4.pages;
 
-import com.epam.trn.hw3.components.Iframe;
-import com.epam.trn.hw3.components.RowBenefits;
+import com.epam.trn.hw4.components.Iframe;
+import com.epam.trn.hw4.components.RowBenefits;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 

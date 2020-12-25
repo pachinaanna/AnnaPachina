@@ -1,9 +1,9 @@
-package com.epam.trn.hw3.pages;
+package com.epam.trn.hw4.pages;
 
-import com.epam.trn.hw3.components.Checkbox;
-import com.epam.trn.hw3.components.ColorsMenu;
-import com.epam.trn.hw3.components.LogsPanel;
-import com.epam.trn.hw3.components.Radio;
+import com.epam.trn.hw4.components.Checkbox;
+import com.epam.trn.hw4.components.ColorsMenu;
+import com.epam.trn.hw4.components.LogsPanel;
+import com.epam.trn.hw4.components.Radio;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 

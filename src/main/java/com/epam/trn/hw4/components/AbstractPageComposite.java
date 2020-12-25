@@ -1,4 +1,4 @@
-package com.epam.trn.hw3.components;
+package com.epam.trn.hw4.components;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;

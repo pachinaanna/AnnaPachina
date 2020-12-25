@@ -1,6 +1,6 @@
-package com.epam.trn.hw3;
+package com.epam.trn.hw4;
 
-import com.epam.trn.hw3.Steps.TestSteps;
+import com.epam.trn.hw4.Steps.TestSteps;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;

@@ -1,8 +1,8 @@
-package com.epam.trn.hw3.pages;
+package com.epam.trn.hw4.pages;
 
-import com.epam.trn.hw3.components.AbstractPageComposite;
-import com.epam.trn.hw3.components.HeaderMenu;
-import com.epam.trn.hw3.components.LeftSideMenu;
+import com.epam.trn.hw4.components.AbstractPageComposite;
+import com.epam.trn.hw4.components.HeaderMenu;
+import com.epam.trn.hw4.components.LeftSideMenu;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
