@@ -16,11 +16,23 @@ public class HomePage extends AbstractPage {
     protected Iframe iframe = new Iframe(webDriver);
     protected RowBenefits rowBenefits = new RowBenefits(webDriver);
 
+    public void open(String url) {
+        webDriver.get(url);
+    }
+
     public void login(String username, String password) {
         headerMenu.clickUserIcon();
         headerMenu.sendKeysToUserNameSendField(username);
         headerMenu.sendKeysToPasswordField(password);
         headerMenu.clickLoginButton();
+    }
+
+    public void goToIframe() {
+            webDriver.switchTo().frame(iframe.getIframe());
+    }
+
+    public void returnToHomePage() {
+        webDriver.switchTo().defaultContent();
     }
 
     public boolean checkHeaderButtonsText(String buttonText) {

@@ -29,6 +29,10 @@ public class DifferentElementsPage extends AbstractPage {
         findAndClick(radio.getRadioButtons(), radioName);
     }
 
+    public void refreshPage() {
+        webDriver.navigate().refresh();
+    }
+
     public void selectColor(String colorName) {
         colorsMenu.clickColorsMenu();
         findAndClick(colorsMenu.getColors(), colorName);

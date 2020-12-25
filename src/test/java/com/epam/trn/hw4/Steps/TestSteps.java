@@ -1,36 +1,21 @@
-package com.epam.trn.hw3;
+package com.epam.trn.hw3.Steps;
 
-import com.epam.trn.hw3.components.HeaderMenu;
-import com.epam.trn.hw3.components.Iframe;
-import com.epam.trn.hw3.pages.DifferentElementsPage;
-import com.epam.trn.hw3.pages.HomePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import java.io.IOException;
 import java.util.Properties;
 
-public class TestSteps{
+public class TestSteps extends AbstractStep {
 
-    public WebDriver webDriver;
-
-    HeaderMenu headerMenu = new HeaderMenu(webDriver);
-    HomePage homePage = new HomePage(webDriver);
-    Iframe iframe = new Iframe(webDriver);
-    DifferentElementsPage differentElements = new DifferentElementsPage(webDriver);
+    public TestSteps(WebDriver webDriver) throws IOException {
+        super(webDriver);
+    }
 
     Properties properties = getProperties("expectedResults.properties");
 
-    public TestSteps() throws IOException { }
-
-    public Properties getProperties(String fileName) throws IOException {
-        Properties p = new Properties();
-        p.load(ClassLoader.getSystemResourceAsStream(fileName));
-        return p;
-    }
-
     public void openSite() {
-        webDriver.get(properties.getProperty("url"));
+        homePage.open(properties.getProperty("url"));
     }
 
     public String getExpectedUrl() {
@@ -106,7 +91,7 @@ public class TestSteps{
     }
 
     public void switchToIframe() {
-        webDriver.switchTo().frame(iframe.getIframe());
+        homePage.goToIframe();
     }
 
     public boolean frameButtonIsDisplayed() {
@@ -114,7 +99,7 @@ public class TestSteps{
     }
 
     public void switchBackFromIframe() {
-        webDriver.switchTo().defaultContent();
+        homePage.returnToHomePage();
     }
 
     public int getQuantityOfSideMenuItems() {
@@ -182,7 +167,7 @@ public class TestSteps{
     }
 
     public void refreshPage() {
-        webDriver.navigate().refresh();
+        differentElements.refreshPage();
     }
 
     public boolean checkCheckboxCheckedLogs(WebElement element) {

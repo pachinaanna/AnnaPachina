@@ -1,9 +1,0 @@
-<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
-<suite name="Exercises 1">
-
-    <test name="Exercise 1 tests">
-        <packages>
-            <package name="com.epam.trn.hw3.ex1.*"/>
-        </packages>
-    </test>
-</suite>
