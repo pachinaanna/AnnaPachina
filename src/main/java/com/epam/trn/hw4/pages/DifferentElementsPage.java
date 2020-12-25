@@ -25,17 +25,15 @@ public class DifferentElementsPage extends AbstractPage {
         findAndClick(checkbox.getCheckboxes(), checkboxName);
     }
 
-    public void selectRadio(String radioName) {
-        findAndClick(radio.getRadioButtons(), radioName);
-    }
-
-    public void refreshPage() {
-        webDriver.navigate().refresh();
-    }
+    public void selectRadio(String radioName) { findAndClick(radio.getRadioButtons(), radioName); }
 
     public void selectColor(String colorName) {
         colorsMenu.clickColorsMenu();
         findAndClick(colorsMenu.getColors(), colorName);
+    }
+
+    public List<WebElement> getColor() {
+        return colorsMenu.getColors();
     }
 
     public WebElement getColor(String colorName) {
@@ -48,6 +46,9 @@ public class DifferentElementsPage extends AbstractPage {
         return null;
     }
 
+    public List<WebElement> getRadioButtons() {
+        return radio.getRadioButtons(); }
+
     public WebElement getRadio(String checkboxName) {
         for(WebElement item : radio.getRadioButtons()) {
             if(checkboxName.equals(item.getText())) {
@@ -56,6 +57,9 @@ public class DifferentElementsPage extends AbstractPage {
         }
         return null;
     }
+
+    public List<WebElement> getCheckboxes() {
+        return checkbox.getCheckboxes(); }
 
     public WebElement getCheckbox(String checkboxName) {
         for(WebElement item : checkbox.getCheckboxes()) {

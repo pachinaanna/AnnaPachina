@@ -16,10 +16,6 @@ public class HomePage extends AbstractPage {
     protected Iframe iframe = new Iframe(webDriver);
     protected RowBenefits rowBenefits = new RowBenefits(webDriver);
 
-    public void open(String url) {
-        webDriver.get(url);
-    }
-
     public void login(String username, String password) {
         headerMenu.clickUserIcon();
         headerMenu.sendKeysToUserNameSendField(username);
@@ -35,16 +31,16 @@ public class HomePage extends AbstractPage {
         webDriver.switchTo().defaultContent();
     }
 
-    public boolean checkHeaderButtonsText(String buttonText) {
-       return findAndCompare(headerMenu.getHeaderButtons(), buttonText);
+    public boolean checkHeaderButtonsText(List<String> buttonText) {
+       return findAndCompareFromLists(headerMenu.getHeaderButtons(), buttonText);
     }
 
-    public boolean checkLeftSideItemsText(String itemText) {
-        return findAndCompare(leftSideMenu.getLeftSideItems(), itemText);
+    public boolean checkLeftSideItemsText(List<String> itemText) {
+        return findAndCompareFromLists(leftSideMenu.getLeftSideItems(), itemText);
     }
 
-    public boolean checkBenefitsText(String text) {
-        return findAndCompare(rowBenefits.getBenefitsText(), text);
+    public boolean checkBenefitsText(List<String> benefitText) {
+        return findAndCompareFromLists(rowBenefits.getBenefitsText(), benefitText);
     }
 
     public void goToDifferentElements() {

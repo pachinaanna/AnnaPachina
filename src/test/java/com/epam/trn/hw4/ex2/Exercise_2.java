@@ -1,11 +1,7 @@
 package com.epam.trn.hw4.ex2;
 
-
+import com.epam.trn.hw4.Steps.AssertionSteps;
 import com.epam.trn.hw4.Steps.TestSteps;
-import com.epam.trn.hw4.components.Checkbox;
-import com.epam.trn.hw4.components.ColorsMenu;
-import com.epam.trn.hw4.components.Radio;
-import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 import com.epam.trn.hw4.AbstractTest;
 
@@ -13,72 +9,68 @@ import java.io.IOException;
 
 public class Exercise_2 extends AbstractTest {
 
-    @Test
+    @Test(description = "Exercise 2 test")
     public void exercise2() throws IOException {
 
-        Checkbox check = new Checkbox(webDriver);
-        Radio radio = new Radio(webDriver);
-        ColorsMenu colorsMenu = new ColorsMenu(webDriver);
-
         TestSteps step = new TestSteps(webDriver);
+        AssertionSteps assertionStep = new AssertionSteps(webDriver);
 
         // Step 1: Open test site by URL
         // Data: https://jdi-testing.github.io/jdi-light/index.html
         // Exp. result: Test site is opened
 
         step.openSite();
-        softAssert.assertEquals(webDriver.getCurrentUrl(), step.getExpectedUrl());
+        assertionStep.assertThatSiteIsOpened();
 
         // Step 2: Assert browser title
         // Data: "Home Page"
         // Exp. result: Browser title equals "Home Page"
 
-        softAssert.assertEquals(webDriver.getTitle(), step.homePageBrowserTitle());
+        assertionStep.assertThatBrowserTitleEqualsHomePage();
 
         // Step 3: Perform login
         // Data: username: Roman, pass: Jdi1234
         // Exp. result: User is logged
 
         step.login();
-        softAssert.assertTrue(step.loggedUserIsDisplayed());
+        assertionStep.assertThatUserIsLogged();
 
         // Step4: Assert User name in the left-top side of screen that user is logged
         // Data: ROMAN IOVLEV
         // Exp. result: Name is displayed and equals to expected result
 
-        softAssert.assertTrue(step.loggedUserIsDisplayed());
-        softAssert.assertEquals(step.getLoggedUserText(), step.getUserName());
+        assertionStep.assertThatUserNameEqualsToExpectedResult();
 
         // Step 5: Open through the header menu Service -> Different Elements Page
         // Data: -
         // Exp. result: Page is opened
 
         step.goToDifferentElementsPage();
-        softAssert.assertEquals(webDriver.getTitle(), step.differentElementsPageBrowserTitle());
+        assertionStep.assertThatBrowserTitleEqualsDifferentElements();
 
         // Step 6: Select checkboxes
         // Data: Water, Wind
         // Exp. result: Elements are checked
 
         step.selectCheckboxWater();
-        softAssert.assertTrue(step.checkboxWaterIsSelected());
+        assertionStep.assertThatCheckboxWaterIsSelected();
 
         step.selectCheckboxWind();
-        softAssert.assertTrue(step.checkboxWindIsSelected());
+        assertionStep.assertThatCheckboxWindIsSelected();
 
         // Step 7: Select radio
         // Data: Selen
         // Exp. result: Element is checked
 
         step.selectRadioSelen();
-        softAssert.assertTrue(step.radioSelenIsSelected());
+        assertionStep.assertThatRadioSelenIsSelected();
 
-//        // Step 8: Select in dropdown
+        // Step 8: Select in dropdown
         // Data: Yellow
         // Exp. result: Element is selected
 
         step.selectYellowInDropdown();
-        softAssert.assertTrue(step.yellowIsSelected());
+        assertionStep.assertThatYellowIsSelected();
 
         // Step 9: Assert that
         // •	for each checkbox there is an individual log row and value is corresponded to the status of checkbox
@@ -91,23 +83,14 @@ public class Exercise_2 extends AbstractTest {
         // •	dropdown name and selected value is corresponding to selected
 
         step.refreshPage();
+        assertionStep.assertThatLogsForCheckedCheckboxesCorrespondToTheStatus();
 
-        for (WebElement element : check.getCheckboxes()) {
-            softAssert.assertTrue(step.checkCheckboxCheckedLogs(element));
-        }
+        assertionStep.assertThatLogsForUncheckedCheckboxesCorrespondToTheStatus();
 
-        for (WebElement element : check.getCheckboxes()) {
-            softAssert.assertTrue(step.checkCheckboxUncheckedLogs(element));
-        }
-
-        for (WebElement element : radio.getRadioButtons()) {
-            softAssert.assertTrue(step.checkRadioCheckedLogs(element));
-        }
+        assertionStep.assertThatLogsForRadioButtonsCorrespondToTheStatus();
 
         step.selectYellowInDropdown();
-        for (WebElement element : colorsMenu.getColors()) {
-            softAssert.assertTrue(step.checkColorCheckedLogs(element));
-        }
+        assertionStep.assertThatLogsForColorsCorrespondToTheStatus();
 
     }
 
