@@ -24,9 +24,19 @@
 
     <profiles>
         <profile>
-            <id>exercise-1</id>
+            <id>all-tests</id>
             <activation>
                 <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <suite.file>${project.basedir}/src/test/resources/AllTestsHW4.xml</suite.file>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>exercise-1</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
             </activation>
             <properties>
                 <suite.file>${project.basedir}/src/test/resources/Exercise1.xml</suite.file>

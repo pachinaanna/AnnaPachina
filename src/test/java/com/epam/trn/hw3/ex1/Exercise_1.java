@@ -1,7 +1,7 @@
 package com.epam.trn.hw3.ex1;
 
 import com.epam.trn.hw3.Steps.TestSteps;
-import com.epam.trn.hw4.pages.HomePage;
+import com.epam.trn.hw3.pages.HomePage;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 import com.epam.trn.hw3.AbstractTest;

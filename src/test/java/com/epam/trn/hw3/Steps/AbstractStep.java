@@ -1,9 +1,9 @@
 package com.epam.trn.hw3.Steps;
 
-import com.epam.trn.hw4.components.HeaderMenu;
-import com.epam.trn.hw4.components.Iframe;
-import com.epam.trn.hw4.pages.DifferentElementsPage;
-import com.epam.trn.hw4.pages.HomePage;
+import com.epam.trn.hw3.components.HeaderMenu;
+import com.epam.trn.hw3.components.Iframe;
+import com.epam.trn.hw3.pages.DifferentElementsPage;
+import com.epam.trn.hw3.pages.HomePage;
 import org.openqa.selenium.WebDriver;
 
 import java.io.IOException;

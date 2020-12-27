@@ -20,23 +20,15 @@ public abstract class AbstractTest {
 
     @BeforeMethod
     public void setUp() throws IOException {
-
-        WebDriverManager.chromedriver().setup();
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("start-maximized");
-        webDriver = new ChromeDriver(options);
+        webDriver = DriverManager.getDriver();
         softAssert = new SoftAssert();
-
         step = new TestSteps(webDriver);
-
     }
 
     @AfterMethod
     public void clear() {
         webDriver.quit();
     }
-
-
 
 }
 
