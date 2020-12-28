@@ -1,34 +1,26 @@
 package com.epam.trn.hw4;
 
+import com.epam.trn.hw4.Steps.AssertionSteps;
 import com.epam.trn.hw4.Steps.TestSteps;
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.ITestContext;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-import org.testng.asserts.SoftAssert;
 
 import java.io.IOException;
 
 public abstract class AbstractTest {
 
     public WebDriver webDriver;
-    public SoftAssert softAssert;
-
-    TestSteps step;
+    public TestSteps step;
+    public AssertionSteps assertionStep;
 
     @BeforeMethod
-    public void setUp() throws IOException {
-
-        WebDriverManager.chromedriver().setup();
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("start-maximized");
-        webDriver = new ChromeDriver(options);
-        softAssert = new SoftAssert();
-
+    public void setUp(ITestContext testContext) throws IOException {
+        webDriver = DriverManager.getDriver();
         step = new TestSteps(webDriver);
-
+        assertionStep = new AssertionSteps(webDriver);
+        testContext.setAttribute("webDriver", webDriver);
     }
 
     @AfterMethod

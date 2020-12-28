@@ -31,16 +31,24 @@ public class HomePage extends AbstractPage {
         webDriver.switchTo().defaultContent();
     }
 
-    public boolean checkHeaderButtonsText(List<String> buttonText) {
-       return findAndCompareFromLists(headerMenu.getHeaderButtons(), buttonText);
+    public boolean checkHeaderButtonsText(String buttonText) {
+       return findAndCompare(headerMenu.getHeaderButtons(), buttonText);
     }
 
-    public boolean checkLeftSideItemsText(List<String> itemText) {
-        return findAndCompareFromLists(leftSideMenu.getLeftSideItems(), itemText);
+    public boolean checkLeftSideItemsText(String itemText) {
+        return findAndCompare(leftSideMenu.getLeftSideItems(), itemText);
     }
 
-    public boolean checkBenefitsText(List<String> benefitText) {
-        return findAndCompareFromLists(rowBenefits.getBenefitsText(), benefitText);
+    public boolean findAndCompareBenefits(List<String> elements, String elementName) {
+        for(String element : elements)
+            if(elementName.equals(element)) {
+                return true;
+            }
+        return false;
+    }
+
+    public boolean checkBenefitsText(String benefitText) {
+        return findAndCompareBenefits(rowBenefits.getBenefitsText(), benefitText);
     }
 
     public void goToDifferentElements() {

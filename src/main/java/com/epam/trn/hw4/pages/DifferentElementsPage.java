@@ -76,12 +76,18 @@ public class DifferentElementsPage extends AbstractPage {
             return element.getText() + logText;
         }
         else {
-            return logText + element.getText();
+            return logText + " " + element.getText();
         }
     }
 
     public List<String> actualLog(WebElement element) {
+        if ((element.getText().equals("Water") || element.getText().equals("Wind")
+                || element.getText().equals("Earth") || element.getText().equals("Fire"))) {
         doubleClickElements(element);
+        }
+        else {
+            element.click();
+        }
         List<String> list = new ArrayList<>();
         for (WebElement item : logsPanel.getLogs()) {
             list.add(item.getText());
@@ -89,13 +95,21 @@ public class DifferentElementsPage extends AbstractPage {
         return list;
     }
 
-    public boolean compareLogs(WebElement element, String logText) {
+    public boolean compareCheckboxLogs(WebElement element, String logText) {
         String expected = expectedLog(logText, element);
         List<String> actual = actualLog(element);
         if(expected.contains("false")) {
-            return expected.contains(actual.get(1));
+            return actual.get(0).contains(expected);
         }
-        return expected.contains(actual.get(0));
+        else {
+            return actual.get(1).contains(expected);
+        }
+    }
+
+    public boolean compareRadioButtonsAndColorsLogs(WebElement element, String logText) {
+        String expected = expectedLog(logText, element);
+        List<String> actual = actualLog(element);
+            return actual.get(0).contains(expected);
     }
 
 

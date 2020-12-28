@@ -35,15 +35,6 @@ public class AbstractPage extends AbstractPageComposite {
         return false;
     }
 
-    public boolean findAndCompareFromLists(List<WebElement> elements, List<String> elementName) {
-        for(int i = 0; i<elements.size()-1; i++) {
-            if(elementName.get(i).equals(elements.get(i).getText())) {
-                return true;
-            }
-        }
-        return false;
-    }
-
     public void doubleClickElements(WebElement element) {
             element.click();
             element.click();

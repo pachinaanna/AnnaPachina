@@ -1,19 +1,15 @@
-package com.epam.trn.hw4.ex2;
+package com.epam.trn.hw4.Exercise_1.ex2;
 
-import com.epam.trn.hw4.Steps.AssertionSteps;
-import com.epam.trn.hw4.Steps.TestSteps;
+import com.epam.trn.hw4.AllureListener;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import com.epam.trn.hw4.AbstractTest;
 
-import java.io.IOException;
-
+@Listeners({AllureListener.class})
 public class Exercise_2 extends AbstractTest {
 
     @Test(description = "Exercise 2 test")
-    public void exercise2() throws IOException {
-
-        TestSteps step = new TestSteps(webDriver);
-        AssertionSteps assertionStep = new AssertionSteps(webDriver);
+    public void exercise2() {
 
         // Step 1: Open test site by URL
         // Data: https://jdi-testing.github.io/jdi-light/index.html
@@ -91,6 +87,8 @@ public class Exercise_2 extends AbstractTest {
 
         step.selectYellowInDropdown();
         assertionStep.assertThatLogsForColorsCorrespondToTheStatus();
+
+        assertionStep.assertAll();
 
     }
 

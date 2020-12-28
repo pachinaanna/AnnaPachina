@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class RowBenefits extends AbstractPageComposite {
@@ -13,9 +14,13 @@ public class RowBenefits extends AbstractPageComposite {
     }
 
     @FindBy(css = ".benefit-txt")
-    private List<WebElement> benefitText;
+    private List<WebElement> benefits;
 
-    public List<WebElement> getBenefitsText() {
+    public List<String> getBenefitsText() {
+        List<String> benefitText = new ArrayList<>();
+        for(WebElement element : benefits) {
+            benefitText.add(element.getText().replace("\n", " ").replace("…", "..."));
+        }
         return benefitText;
     }
 

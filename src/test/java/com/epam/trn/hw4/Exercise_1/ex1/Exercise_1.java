@@ -1,19 +1,15 @@
-package com.epam.trn.hw4.ex1;
+package com.epam.trn.hw4.Exercise_1.ex1;
 
-import com.epam.trn.hw4.Steps.AssertionSteps;
-import com.epam.trn.hw4.Steps.TestSteps;
+import com.epam.trn.hw4.AllureListener;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import com.epam.trn.hw4.AbstractTest;
 
-import java.io.IOException;
-
+@Listeners({AllureListener.class})
 public class Exercise_1 extends AbstractTest {
 
     @Test(description = "Exercise 1 test")
-    public void exercise1() throws IOException {
-
-        TestSteps step = new TestSteps(webDriver);
-        AssertionSteps assertionStep = new AssertionSteps(webDriver);
+    public void exercise1() {
 
         // Step 1: Open test site by URL
         // Data: "https://jdi-testing.github.io/jdi-light/index.html"
@@ -88,6 +84,8 @@ public class Exercise_1 extends AbstractTest {
 
         assertionStep.assertThatQuantityOfLeftSectionItemsEqualsToExpected();
         assertionStep.assertThatTextOfLeftSectionItemsEqualToExpected();
+
+        assertionStep.assertAll();
     }
 
 }
