@@ -1,6 +1,10 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 <suite name="Exercise 1">
 
+    <listeners>
+        <listener class-name="com.epam.trn.hw4.utils.AllureListener"/>
+    </listeners>
+
     <test name="All tests from HW3">
         <packages>
             <package name="com.epam.trn.hw4.Exercise_1.ex1.*"/>
