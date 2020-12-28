@@ -21,6 +21,7 @@ public class HeaderSectionItemsTest extends AbstractTest {
         step.openSite();
         assertionStep.assertThatQuantityOfHeaderMenuItemsEqualsExpectedResult();
         assertionStep.assertThatTextOfTheHeaderButtonsEqualToExpectedResult();
+        assertionStep.assertAll();
 
     }
 }

@@ -1,6 +1,6 @@
 package com.epam.trn.hw4.Exercise_1.ex1;
 
-import com.epam.trn.hw4.AllureListener;
+import com.epam.trn.hw4.utils.AllureListener;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import com.epam.trn.hw4.AbstractTest;

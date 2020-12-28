@@ -21,6 +21,7 @@ public class FrameButtonIsExistTest extends AbstractTest {
         step.openSite();
         step.switchToIframe();
         assertionStep.assertThatFrameButtonIsDisplayed();
+        assertionStep.assertAll();
 
     }
 }

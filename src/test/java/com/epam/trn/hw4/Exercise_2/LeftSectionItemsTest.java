@@ -21,6 +21,7 @@ public class LeftSectionItemsTest extends AbstractTest {
         step.openSite();
         assertionStep.assertThatQuantityOfLeftSectionItemsEqualsToExpected();
         assertionStep.assertThatTextOfLeftSectionItemsEqualToExpected();
+        assertionStep.assertAll();
 
     }
 }

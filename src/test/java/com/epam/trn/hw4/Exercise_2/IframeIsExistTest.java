@@ -20,6 +20,7 @@ public class IframeIsExistTest extends AbstractTest {
 
         step.openSite();
         assertionStep.assertThatIframeIsDisplayed();
+        assertionStep.assertAll();
 
     }
 }

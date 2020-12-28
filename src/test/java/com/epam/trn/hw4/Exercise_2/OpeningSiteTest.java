@@ -19,6 +19,7 @@ public class OpeningSiteTest extends AbstractTest {
 
         step.openSite();
         assertionStep.assertThatSiteIsOpened();
+        assertionStep.assertAll();
 
     }
 }

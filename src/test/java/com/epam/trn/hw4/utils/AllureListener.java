@@ -1,4 +1,4 @@
-package com.epam.trn.hw4;
+package com.epam.trn.hw4.utils;
 
 import io.qameta.allure.Attachment;
 import org.openqa.selenium.OutputType;

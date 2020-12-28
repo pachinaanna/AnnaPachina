@@ -21,6 +21,7 @@ public class BenefitsTextTest extends AbstractTest {
         step.openSite();
         assertionStep.assertThatQuantityOfBenefitsEqualsToExpected();
         assertionStep.assertThatTextOfBenefitsEqualToExpected();
+        assertionStep.assertAll();
 
     }
 }

@@ -22,6 +22,7 @@ public class UsernameIsLoggedTest extends AbstractTest {
         step.openSite();
         step.login();
         assertionStep.assertThatUserNameEqualsToExpectedResult();
+        assertionStep.assertAll();
 
     }
 }

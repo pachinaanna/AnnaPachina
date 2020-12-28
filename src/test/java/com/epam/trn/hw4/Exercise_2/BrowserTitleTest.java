@@ -20,6 +20,7 @@ public class BrowserTitleTest extends AbstractTest{
 
         step.openSite();
         assertionStep.assertThatBrowserTitleEqualsHomePage();
+        assertionStep.assertAll();
 
     }
 

@@ -2,7 +2,7 @@
 <suite name="Exercises 2">
 
     <listeners>
-        <listener class-name="com.epam.trn.hw4.AllureListener"/>
+        <listener class-name="com.epam.trn.hw4.utils.AllureListener"/>
     </listeners>
 
     <test name="Exercise 2 tests">

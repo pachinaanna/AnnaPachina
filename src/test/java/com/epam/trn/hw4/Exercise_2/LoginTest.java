@@ -21,6 +21,7 @@ public class LoginTest extends AbstractTest {
         step.openSite();
         step.login();
         assertionStep.assertThatUserIsLogged();
+        assertionStep.assertAll();
 
     }
 }
