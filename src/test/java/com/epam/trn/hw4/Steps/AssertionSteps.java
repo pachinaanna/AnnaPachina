@@ -38,8 +38,8 @@ public class AssertionSteps extends AbstractStep {
     }
 
     @Step("Проверка того, что количество разделов в header menu равняется 4")
-    public void assertThatQuantityOfHeaderMenuItemsEqualsExpectedResult() {
-        softAssert.assertEquals(homePage.quantityOfHeaderMenuItems(), 4, "количество разделов header menu не равно 4");
+    public void assertThatQuantityOfHeaderMenuItemsEqualsExpectedResult(int expected) {
+        softAssert.assertEquals(homePage.quantityOfHeaderMenuItems(), expected, "количество разделов header menu не равно 4");
     }
 
     @Step("Проверка того, что текст кнопок из header menu соответствует требуемому")
@@ -55,8 +55,8 @@ public class AssertionSteps extends AbstractStep {
     }
 
     @Step("Проверка того, что количество иконок равно 4")
-    public void assertThatQuantityOfIconsEqualsToExpected() {
-        softAssert.assertEquals(homePage.quantityOfIcons(), 4, "количество иконок не равно 4");
+    public void assertThatQuantityOfIconsEqualsToExpected(int expected) {
+        softAssert.assertEquals(homePage.quantityOfIcons(), expected, "количество иконок не равно 4");
     }
 
     @Step("Проверка того, что все иконки отображены")
@@ -67,8 +67,8 @@ public class AssertionSteps extends AbstractStep {
     }
 
     @Step("Проверка того, что количество бенефитов равно 4")
-    public void assertThatQuantityOfBenefitsEqualsToExpected() {
-        softAssert.assertEquals(homePage.quantityOfBenefitsText(), 4, "количество бенефитов не равно 4");
+    public void assertThatQuantityOfBenefitsEqualsToExpected(int expected) {
+        softAssert.assertEquals(homePage.quantityOfBenefitsText(), expected, "количество бенефитов не равно 4");
     }
 
     @Step("Проверка того, что текст бенефитов соответствует требуемому")
@@ -94,8 +94,8 @@ public class AssertionSteps extends AbstractStep {
     }
 
     @Step("Проверка того, что количество разделов на левой секции равно 5")
-    public void assertThatQuantityOfLeftSectionItemsEqualsToExpected() {
-        softAssert.assertEquals(homePage.quantityOfLeftSideMenuItems(), 5, "количество разделов левой секции не равно 5");
+    public void assertThatQuantityOfLeftSectionItemsEqualsToExpected(int expected) {
+        softAssert.assertEquals(homePage.quantityOfLeftSideMenuItems(), expected, "количество разделов левой секции не равно 5");
     }
 
     @Step("Проверка того, что текст разделов из левой секции соотвествует требуемому")
@@ -167,19 +167,4 @@ public class AssertionSteps extends AbstractStep {
         public void assertAll() {
             softAssert.assertAll();
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }

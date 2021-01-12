@@ -19,7 +19,7 @@ public class HeaderSectionItemsTest extends AbstractTest {
         // Exp. results: Menu buttons are displayed and have proper texts
 
         step.openSite();
-        assertionStep.assertThatQuantityOfHeaderMenuItemsEqualsExpectedResult();
+        assertionStep.assertThatQuantityOfHeaderMenuItemsEqualsExpectedResult(4);
         assertionStep.assertThatTextOfTheHeaderButtonsEqualToExpectedResult();
         assertionStep.assertAll();
 

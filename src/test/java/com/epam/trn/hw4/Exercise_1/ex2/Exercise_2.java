@@ -89,7 +89,5 @@ public class Exercise_2 extends AbstractTest {
         assertionStep.assertThatLogsForColorsCorrespondToTheStatus();
 
         assertionStep.assertAll();
-
     }
-
 }

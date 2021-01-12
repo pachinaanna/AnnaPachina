@@ -111,7 +111,5 @@ public class DifferentElementsPage extends AbstractPage {
         List<String> actual = actualLog(element);
             return actual.get(0).contains(expected);
     }
-
-
 }
 

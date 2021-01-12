@@ -28,8 +28,5 @@ public abstract class AbstractTest {
     public void clear() {
         webDriver.quit();
     }
-
-
-
 }
 

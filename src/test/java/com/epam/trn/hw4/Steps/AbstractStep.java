@@ -23,7 +23,6 @@ public abstract class AbstractStep {
         headerMenu = new HeaderMenu(webDriver);
         iframe = new Iframe(webDriver);
         properties = getProperties("expectedResults.properties");
-
     }
 
     public Properties getProperties(String fileName) throws IOException {

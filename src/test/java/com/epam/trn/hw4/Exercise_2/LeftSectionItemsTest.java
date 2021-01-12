@@ -19,7 +19,7 @@ public class LeftSectionItemsTest extends AbstractTest {
         // Exp. result: Left section menu items are displayed and have proper text
 
         step.openSite();
-        assertionStep.assertThatQuantityOfLeftSectionItemsEqualsToExpected();
+        assertionStep.assertThatQuantityOfLeftSectionItemsEqualsToExpected(5);
         assertionStep.assertThatTextOfLeftSectionItemsEqualToExpected();
         assertionStep.assertAll();
 

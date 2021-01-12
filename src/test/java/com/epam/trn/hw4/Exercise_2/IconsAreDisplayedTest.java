@@ -20,7 +20,7 @@ public class IconsAreDisplayedTest extends AbstractTest {
 
         step.openSite();
         assertionStep.assertThatEveryIconsAreDisplayed();
-        assertionStep.assertThatQuantityOfIconsEqualsToExpected();
+        assertionStep.assertThatQuantityOfIconsEqualsToExpected(4);
         assertionStep.assertAll();
 
     }

@@ -19,7 +19,7 @@ public class BenefitsTextTest extends AbstractTest {
         // Exp. result: Texts are displayed and equal to expected
 
         step.openSite();
-        assertionStep.assertThatQuantityOfBenefitsEqualsToExpected();
+        assertionStep.assertThatQuantityOfBenefitsEqualsToExpected(4);
         assertionStep.assertThatTextOfBenefitsEqualToExpected();
         assertionStep.assertAll();
 
