@@ -6,13 +6,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.epam.trn.qa</groupId>
-    <artifactId>com.epam.trn.qa.hw4.Anna_Pachina</artifactId>
+    <artifactId>com.epam.trn.qa.Anna_Pachina</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
         <testng.version>7.3.0</testng.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <testng.version>7.3.0</testng.version>
         <java.version>1.8</java.version>
         <selenium.version>3.141.59</selenium.version>
         <slf4j.version>1.6.2</slf4j.version>
@@ -22,6 +21,7 @@
         <allure.version>2.13.7</allure.version>
         <allure.maven.version>2.8</allure.maven.version>
         <surefire.version>2.12.4</surefire.version>
+        <cucumber.version>6.9.1</cucumber.version>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
@@ -87,6 +87,26 @@
         <dependency>
             <groupId>io.qameta.allure</groupId>
             <artifactId>allure-testng</artifactId>
+            <version>${allure.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-java</artifactId>
+            <version>${cucumber.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-testng</artifactId>
+            <version>${cucumber.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-cucumber4-jvm</artifactId>
             <version>${allure.version}</version>
             <scope>test</scope>
         </dependency>
