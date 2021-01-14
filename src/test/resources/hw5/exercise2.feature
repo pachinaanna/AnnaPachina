@@ -10,18 +10,17 @@ Feature: Exercise 2
     And 6 Usernames should be displayed on Users Table on User Table Page
     And 6 Description texts under images should be displayed on Users Table on User Table Page
     And 6 checkboxes should be displayed on Users Table on User Table Page
-    And User table should contain following values:
-    |Number  |User              |Description                      |
-    |1       |Roman             |Wolverine                        |
-    |2       |Sergey Ivan       |Spider Man                       |
-    |3       |Vladzimir         |Punisher                         |
-    |4       |Helen Bennet      |Captain America some description |
-    |5       |Yoshi Tannamuri   |Cyclope some description         |
-    |6       |Giovanni Rovelli  |Hulksome description             |
-#
-#    And droplist should contain <Dropdown values> in column Type for user Roman
-#    Examples:
-#    |Dropdown values|
-#    |Admin          |
-#    |User           |
-#    |Manager        |
+#    And User table should contain following values:
+#    |Number  |User              |Description                      |
+#    |1       |Roman             |Wolverine                        |
+#    |2       |Sergey Ivan       |Spider Man                       |
+#    |3       |Vladzimir         |Punisher                         |
+#    |4       |Helen Bennet      |Captain America some description |
+#    |5       |Yoshi Tannamuri   |Cyclope some description         |
+#    |6       |Giovanni Rovelli  |Hulksome description             |
+##
+    And droplist should contain values in column Type for user Roman:
+    |Dropdown values|
+    |Admin          |
+    |User           |
+    |Manager        |

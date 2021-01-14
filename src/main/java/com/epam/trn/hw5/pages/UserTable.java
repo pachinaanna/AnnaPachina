@@ -29,12 +29,8 @@ public class UserTable extends AbstractPage {
         return usersTable.getDescriptions();
     }
 
-    public List<WebElement> getTableRows() {
-        return usersTable.getTableRows();
-    }
-
-    public String getNumbers(int index) {
-        return getTableRows().get(index).findElement(By.xpath("//td[1]")).getText();
+    public WebElement getUserTable() {
+        return usersTable.getUserTable();
     }
 
     public List<WebElement> getUsersCheckboxes() {
@@ -53,5 +49,10 @@ public class UserTable extends AbstractPage {
     public void selectCheckbox(String checkbox, String userName) {
         if(checkbox.equals(getCheckboxForUser(userName).getText()));
         getCheckboxForUser(userName).click();
+    }
+
+    public List<WebElement> getRomanDropdown() {
+        System.out.println(usersTable.getRomanDropdown().size());
+        return usersTable.getRomanDropdown();
     }
 }

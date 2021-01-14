@@ -6,6 +6,7 @@ import io.cucumber.java.en.Then;
 import org.openqa.selenium.WebElement;
 
 import java.io.IOException;
+import java.util.List;
 
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
@@ -100,12 +101,20 @@ public class ThenStepDef extends AbstractBaseStepDef {
 
     }
 
-    @Then("User table should contain following values:")
-    public void user_table_should_contain_following_values(DataTable table) {
-//        for(value : values)
-//        assertEquals(userTable.getNumbers());
+//    @Then("User table should contain following values:")
+//    public void user_table_should_contain_following_values(DataTable table) {
+//        assertEquals(userTable.getUserTable());
+//
+//    }
 
+    @Then("droplist should contain values in column Type for user Roman:")
+    public void droplist_should_contain_values_in_column_type_for_user_roman(List<String> list) {
+        for (int i = 0; i < list.size()-1; i++) {
+            assertEquals(userTable.getRomanDropdown().get(i).getText(), list.get(i+1));
+        }
     }
+
+
 
 
 

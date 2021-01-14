@@ -6,16 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="058ba8a4-a8ca-4205-904f-5d4bfe8cceb1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/trn/hw5/components/HeaderMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epam/trn/hw5/components/HeaderMenu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/trn/hw5/components/UsersTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epam/trn/hw5/components/UsersTable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/trn/hw5/pages/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epam/trn/hw5/pages/HomePage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/trn/hw5/pages/UserTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epam/trn/hw5/pages/UserTable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/expectedResults.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/expectedResults.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/epam/trn/hw5/Steps/ThenStepDef.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/epam/trn/hw5/Steps/ThenStepDef.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/epam/trn/hw5/Steps/WhenStepDef.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/epam/trn/hw5/Steps/WhenStepDef.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/hw5/exercice1.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/hw5/exercice1.feature" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/resources/hw5/exercise2.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/hw5/exercise2.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/hw5/exercise3.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/hw5/exercise3.feature" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

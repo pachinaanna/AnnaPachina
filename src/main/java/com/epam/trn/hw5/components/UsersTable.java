@@ -13,7 +13,7 @@ public class UsersTable extends AbstractPageComposite {
         super(webDriver);
     }
 
-    @FindBy(xpath = "//table[@id='user-table']//tr//td//select")
+    @FindBy(xpath = "//tr//td[1]")
     private List<WebElement> numberTypes;
 
     public List<WebElement> getNumberTypes() {
@@ -41,10 +41,25 @@ public class UsersTable extends AbstractPageComposite {
         return usersCheckboxes;
     }
 
-    @FindBy(xpath = "//table[@id='user-table']//tr")
-    private List<WebElement> tableRows;
+    @FindBy(id = "user-table")
+    private WebElement userTable;
 
-    public List<WebElement> getTableRows() {
-        return tableRows;
+    public WebElement getUserTable() {
+        return userTable;
+    }
+
+//    @FindBy(xpath = "//td//select")
+//    private List<WebElement> allDropdowns;
+//
+//    public List<WebElement> getAllDropdowns() {
+//        return allDropdowns;
+//    }
+
+    @FindBy(xpath = "//tr[1]/td[2]/select[1]//option")
+    private List<WebElement> romanDropdown;
+
+    public List<WebElement> getRomanDropdown() {
+        return romanDropdown;
     }
 }
+
