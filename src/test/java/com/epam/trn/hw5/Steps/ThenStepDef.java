@@ -2,7 +2,6 @@ package com.epam.trn.hw5.Steps;
 
 import com.epam.trn.hw5.DriverSingleton;
 import io.cucumber.java.en.Then;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import java.io.IOException;
@@ -23,6 +22,8 @@ public class ThenStepDef extends AbstractBaseStepDef {
 
     @Then("{string} page should be opened")
     public void page_should_be_opened(String browserTitle) {
+        System.out.println(DriverSingleton.getWebDriver().getTitle());
+        System.out.println(browserTitle);
         assertEquals(DriverSingleton.getWebDriver().getTitle(), browserTitle);
     }
 
@@ -44,7 +45,6 @@ public class ThenStepDef extends AbstractBaseStepDef {
     @Then("radio button {string} should be checked")
     public void radio_button_should_be_checked(String radioButtonName) {
         assertTrue(differentElements.getRadio(radioButtonName).isEnabled());
-//        throw new io.cucumber.java.PendingException();
     }
 
     @Then("color {string} should be selected")
@@ -79,6 +79,38 @@ public class ThenStepDef extends AbstractBaseStepDef {
             assertTrue(differentElements.compareRadioButtonsAndColorsLogs(element, properties.getProperty("log.text.color")));
         }
     }
+
+//    @Then ("(\\d+) Number Type Dropdown should be displayed on Users Table on User Table Page$")
+//    public void number_type_dropdown_should_be_displayed_on_users_table_on_user_table_page(int number) {
+////        for (WebElement element : userTable.getNumberTypes()) {
+//            assertEquals(userTable.getNumberTypes().size(), number);
+////            assertTrue(element.isDisplayed());
+////        }
+//    }
+
+//    @Then ("(\\d+) Usernames should be displayed on Users Table on User Table Page$")
+//    public void usernames_should_be_displayed_on_users_table_on_user_table_page(int number) {
+////        for (WebElement element : userTable.getNumberTypes()) {
+//        assertEquals(userTable.getUserNames().size(), number);
+////            assertTrue(element.isDisplayed());
+////        }
+//    }
+
+    @Then ("(\\d+) Description texts under images should be displayed on Users Table on User Table Page$")
+    public void description_texts_under_images_should_be_displayed_on_users_table_on_user_table_page(int number) {
+//        for (WebElement element : userTable.getNumberTypes()) {
+        assertEquals(userTable.getDescriptions().size(), number);
+//            assertTrue(element.isDisplayed());
+//        }
+    }
+
+//    @Then ("(\\d+) checkboxes should be displayed on Users Table on User Table Page$")
+//    public void checkboxes_should_be_displayed_on_users_table_on_user_table_page(int number) {
+////        for (WebElement element : userTable.getNumberTypes()) {
+//        assertEquals(userTable.getUsersCheckboxes().size(), number);
+////            assertTrue(element.isDisplayed());
+////        }
+//    }
 
 
 

@@ -20,6 +20,7 @@ public class AbstractPage extends AbstractPageComposite {
         for(WebElement element : elements) {
             if(elementName.equals(element.getText())) {
                 element.click();
+                break;
             }
         }
     }

@@ -1,5 +1,6 @@
 package com.epam.trn.hw5.components;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -12,7 +13,7 @@ public class UsersTable extends AbstractPageComposite {
         super(webDriver);
     }
 
-    @FindBy(xpath = "//table[@id='user-table']//td//select")
+    @FindBy(xpath = "//table[@id='user-table']//tr//td//select")
     private List<WebElement> numberTypes;
 
     public List<WebElement> getNumberTypes() {
@@ -33,7 +34,7 @@ public class UsersTable extends AbstractPageComposite {
         return descriptions;
     }
 
-    @FindBy(xpath = "//input[@type='checkbox']")
+    @FindBy(xpath = "//div[@class='user-descr']//input")
     private List<WebElement> usersCheckboxes;
 
     public List<WebElement> getUsersCheckboxes() {

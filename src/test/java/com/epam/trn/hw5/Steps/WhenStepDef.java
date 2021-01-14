@@ -26,12 +26,6 @@ public class WhenStepDef extends AbstractBaseStepDef {
         homePage.goToService(service);
     }
 
-//    @When("I click on {string} in Service dropdown")
-//    public void i_click_on_in_service_dropdown(String service) {
-//        homePage.goToDifferentElements();
-//        System.out.println(service);
-//        }
-
     @When("I check checkbox {string}")
     public void i_check_checkboxes_water_and_wind(String element) {
         differentElements.selectCheckbox(element);
@@ -76,10 +70,7 @@ public class WhenStepDef extends AbstractBaseStepDef {
         }
     }
 
-//    @When("I click on User Table in Service dropdown")
-//    public void i_click_on_user_table_in_service_dropdown() {
-//        homePage.goToUserTable();
-//    }
+
 
 
 

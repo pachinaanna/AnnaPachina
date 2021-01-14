@@ -22,16 +22,6 @@ public class HomePage extends AbstractPage {
         headerMenu.clickLoginButton();
     }
 
-//    public void goToDifferentElements() {
-//        headerMenu.getService().click();
-//        headerMenu.getDifferentElementsService().click();
-//    }
-
-//    public void goToUserTable() {
-//        headerMenu.getService().click();
-//        headerMenu.getUserTableService().click();
-//    }
-
     public void goToService(String serviceName) {
         List<WebElement> elements = headerMenu.getServices();
         findAndClick(elements, serviceName);

@@ -54,10 +54,10 @@ public class HeaderMenu extends AbstractPageComposite {
         return service;
     }
 
-    @FindBy(xpath = "//ul[@class='dropdown-menu']/li[8]/a")
+    @FindBy(xpath = "//ul[@class='dropdown-menu']/li[8]")
     public WebElement differentElementsService;
 
-    @FindBy(xpath = "//ul[@class='dropdown-menu']/li[6]/a")
+    @FindBy(xpath = "//ul[@class='dropdown-menu']/li[6]")
     public WebElement userTableService;
 
     public WebElement getUserTableService() {

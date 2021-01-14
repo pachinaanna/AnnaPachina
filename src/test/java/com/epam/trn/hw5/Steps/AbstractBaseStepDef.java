@@ -4,6 +4,7 @@ import com.epam.trn.hw5.DriverSingleton;
 import com.epam.trn.hw5.components.HeaderMenu;
 import com.epam.trn.hw5.pages.DifferentElementsPage;
 import com.epam.trn.hw5.pages.HomePage;
+import com.epam.trn.hw5.pages.UserTable;
 import org.openqa.selenium.WebDriver;
 
 import java.io.IOException;
@@ -14,6 +15,7 @@ public abstract class AbstractBaseStepDef {
     HomePage homePage;
     DifferentElementsPage differentElements;
     HeaderMenu headerMenu;
+    UserTable userTable;
     Properties properties;
 
     protected AbstractBaseStepDef() throws IOException {
@@ -21,6 +23,7 @@ public abstract class AbstractBaseStepDef {
         homePage = new HomePage(webDriver);
         differentElements = new DifferentElementsPage(webDriver);
         headerMenu = new HeaderMenu(webDriver);
+        userTable = new UserTable(webDriver);
         properties = getProperties("expectedResults.properties");
 
     }
