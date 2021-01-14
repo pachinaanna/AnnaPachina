@@ -47,11 +47,11 @@ public class HeaderMenu extends AbstractPageComposite {
         return loggedUser;
     }
 
-    @FindBy(css = ".m-l8 > li:nth-child(3) > a")
-    private WebElement service;
+    @FindBy(css = ".m-l8 > li")
+    private List<WebElement> headerButtons;
 
-    public WebElement getService() {
-        return service;
+    public List<WebElement> getHeaderButtons() {
+        return headerButtons;
     }
 
     @FindBy(xpath = "//ul[@class='dropdown-menu']/li[8]")

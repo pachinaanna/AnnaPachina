@@ -40,4 +40,11 @@ public class UsersTable extends AbstractPageComposite {
     public List<WebElement> getUsersCheckboxes() {
         return usersCheckboxes;
     }
+
+    @FindBy(xpath = "//table[@id='user-table']//tr")
+    private List<WebElement> tableRows;
+
+    public List<WebElement> getTableRows() {
+        return tableRows;
+    }
 }

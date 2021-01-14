@@ -11,14 +11,17 @@ public class WhenStepDef extends AbstractBaseStepDef {
         super();
     }
 
-    @When("I login as a user Roman Iovlev")
-    public void i_login_as_a_user_roman_iovlev() {
-        homePage.login(properties.getProperty("login"), properties.getProperty("password"));
+    @When("I login as a user {string}")
+    public void i_login_as_a_user(String user) {
+        String[] words = properties.getProperty(user).split("/");
+        String login = words[0].trim();
+        String password = words[1].trim();
+        homePage.login(login, password);
     }
 
-    @When("I click on Service button in header")
-    public void i_click_on_service_button_in_header() {
-        headerMenu.getService().click();
+    @When("I click on {string} button in header")
+    public void i_click_on_button_in_header(String buttonName) {
+        homePage.clickOnHeaderMenuButton(buttonName);
     }
 
     @When("I click on {string} in Service dropdown")
@@ -70,12 +73,10 @@ public class WhenStepDef extends AbstractBaseStepDef {
         }
     }
 
-
-
-
-
-
-
+    @When("I select {string} checkbox for {string}")
+    public void i_select_checkbox_for(String checkbox, String userName) {
+        userTable.selectCheckbox(checkbox, userName);
+    }
 
 
 

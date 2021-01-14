@@ -8,13 +8,14 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/trn/hw5/components/HeaderMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epam/trn/hw5/components/HeaderMenu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/trn/hw5/components/UsersTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epam/trn/hw5/components/UsersTable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/trn/hw5/pages/AbstractPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epam/trn/hw5/pages/AbstractPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/trn/hw5/pages/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epam/trn/hw5/pages/HomePage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/trn/hw5/pages/UserTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epam/trn/hw5/pages/UserTable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/epam/trn/hw5/Steps/AbstractBaseStepDef.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/epam/trn/hw5/Steps/AbstractBaseStepDef.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/expectedResults.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/expectedResults.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/epam/trn/hw5/Steps/ThenStepDef.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/epam/trn/hw5/Steps/ThenStepDef.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/epam/trn/hw5/Steps/WhenStepDef.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/epam/trn/hw5/Steps/WhenStepDef.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/hw5/exercice1.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/hw5/exercice1.feature" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/resources/hw5/exercise2.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/hw5/exercise2.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/hw5/exercise3.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/hw5/exercise3.feature" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +53,7 @@
       <recent name="C:\Users\ASUS\Desktop\Projects\AnnaPachina\src\test\resources\hw5" />
     </key>
   </component>
-  <component name="RunManager" selected="Cucumber Java.Scenario: select checkbox Water and Wind">
+  <component name="RunManager" selected="Cucumber Java.Scenario: User Table Page test">
     <configuration name="Feature: exercice1" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
       <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/hw5/exercice1.feature" />
@@ -92,26 +93,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Scenario: browser title test" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
-      <option name="CUCUMBER_CORE_VERSION" value="5" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/hw5/exercice1.feature" />
-      <option name="GLUE" value="com.epam.trn.hw5.Steps com.epam.trn.hw5.Hooks" />
-      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
-      <module name="com.epam.trn.qa.Anna_Pachina" />
-      <option name="NAME_FILTER" value="^browser title test$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^browser title test$&quot;" />
-      <option name="SUGGESTED_NAME" value="Scenario: browser title test" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="io.cucumber.core.cli.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Scenario: go to Different Element Page" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
       <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/hw5/exercice1.feature" />
@@ -132,15 +113,35 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Scenario: select checkbox Water and Wind" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+    <configuration name="Scenario: login test" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
       <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/hw5/exercice1.feature" />
       <option name="GLUE" value="com.epam.trn.hw5.Steps com.epam.trn.hw5.Hooks" />
       <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
       <module name="com.epam.trn.qa.Anna_Pachina" />
-      <option name="NAME_FILTER" value="^select checkbox Water and Wind$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^select checkbox Water and Wind$&quot;" />
-      <option name="SUGGESTED_NAME" value="Scenario: select checkbox Water and Wind" />
+      <option name="NAME_FILTER" value="^login test$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^login test$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: login test" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.cucumber.core.cli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Scenario: " type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="5" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/hw5/exercise3.feature" />
+      <option name="GLUE" value="com.epam.trn.hw5.Steps com.epam.trn.hw5.Hooks" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+      <module name="com.epam.trn.qa.Anna_Pachina" />
+      <option name="NAME_FILTER" value="^$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: " />
       <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -154,11 +155,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Cucumber Java.Scenario: select checkbox Water and Wind" />
         <item itemvalue="Cucumber Java.Scenario: User Table Page test" />
-        <item itemvalue="Cucumber Java.Scenario: go to Different Element Page" />
-        <item itemvalue="Cucumber Java.Scenario: browser title test" />
+        <item itemvalue="Cucumber Java.Scenario: login test" />
+        <item itemvalue="Cucumber Java.Scenario: " />
         <item itemvalue="Cucumber Java.Feature: exercice1" />
+        <item itemvalue="Cucumber Java.Scenario: go to Different Element Page" />
       </list>
     </recent_temporary>
   </component>
@@ -209,11 +210,6 @@
           <url>file://$PROJECT_DIR$/src/test/java/com/epam/trn/hw5/Runner.java</url>
           <line>9</line>
           <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/com/epam/trn/hw5/Steps/ThenStepDef.java</url>
-          <line>101</line>
-          <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

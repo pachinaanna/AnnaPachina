@@ -15,9 +15,9 @@ public class HomePage extends AbstractPage {
         webDriver.get(url);
     }
 
-    public void login(String username, String password) {
+    public void login(String login, String password) {
         headerMenu.clickUserIcon();
-        headerMenu.sendKeysToUserNameSendField(username);
+        headerMenu.sendKeysToUserNameSendField(login);
         headerMenu.sendKeysToPasswordField(password);
         headerMenu.clickLoginButton();
     }
@@ -25,6 +25,11 @@ public class HomePage extends AbstractPage {
     public void goToService(String serviceName) {
         List<WebElement> elements = headerMenu.getServices();
         findAndClick(elements, serviceName);
+    }
+
+    public void clickOnHeaderMenuButton(String buttonName) {
+        List<WebElement> buttons = headerMenu.getHeaderButtons();
+        findAndClick(buttons, buttonName);
     }
 
 }
