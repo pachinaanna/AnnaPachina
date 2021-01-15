@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class UsersTable extends AbstractPageComposite {
@@ -28,25 +29,57 @@ public class UsersTable extends AbstractPageComposite {
     }
 
     @FindBy(css = ".user-descr > span")
-    private List<WebElement> descriptions;
+    private List<WebElement> descriptionCol;
 
-    public List<WebElement> getDescriptions() {
-        return descriptions;
+    public List<WebElement> getDescriptionCol() {
+        return descriptionCol;
+    }
+
+    public List<String> getDescriptionText() {
+        List<String> descriptText = new ArrayList<>();
+        for(WebElement element : descriptionCol) {
+            descriptText.add(element.getText().replace("\n", " "));
+    }
+        return descriptText;
     }
 
     @FindBy(xpath = "//div[@class='user-descr']//input")
     private List<WebElement> usersCheckboxes;
 
     public List<WebElement> getUsersCheckboxes() {
+        for(WebElement el : usersCheckboxes) {
+            System.out.println(el.getText());
+        }
         return usersCheckboxes;
     }
 
-    @FindBy(id = "user-table")
-    private WebElement userTable;
+//    @FindBy(id = "user-table")
+//    private WebElement userTable;
+//
+//    public WebElement getUserTable() {
+//        return userTable;
+//    }
 
-    public WebElement getUserTable() {
-        return userTable;
+    @FindBy(xpath = "//table[@id='user-table']//tr//td[1]")
+    private List<WebElement> numberCol;
+
+    public List<WebElement> getNumberCol() {
+        return numberCol;
     }
+
+    @FindBy(xpath = "//table[@id='user-table']//tr//td[3]")
+    private List<WebElement> userCol;
+
+    public List<WebElement> getUserCol() {
+        return userCol;
+    }
+
+//    @FindBy(xpath = "//table[@id='user-table']//tr//td[4]")
+//    private List<WebElement> descriptionCol;
+//
+//    public List<WebElement> getDescriptionCol() {
+//        return descriptionCol;
+//    }
 
 //    @FindBy(xpath = "//td//select")
 //    private List<WebElement> allDropdowns;

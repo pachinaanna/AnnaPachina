@@ -77,9 +77,4 @@ public class WhenStepDef extends AbstractBaseStepDef {
     public void i_select_checkbox_for(String checkbox, String userName) {
         userTable.selectCheckbox(checkbox, userName);
     }
-
-
-
-
-
 }

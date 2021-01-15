@@ -83,29 +83,46 @@ public class ThenStepDef extends AbstractBaseStepDef {
     @Then ("(\\d+) Number Type Dropdown should be displayed on Users Table on User Table Page$")
     public void number_type_dropdown_should_be_displayed_on_users_table_on_user_table_page(int number) {
             assertEquals(userTable.getNumberTypes().size(), number);
+            for(WebElement element : userTable.getNumberTypes()) {
+                assertTrue(element.isDisplayed());
+            }
     }
 
     @Then ("(\\d+) Usernames should be displayed on Users Table on User Table Page$")
     public void usernames_should_be_displayed_on_users_table_on_user_table_page(int number) {
         assertEquals(userTable.getUserNames().size(), number);
+        for(WebElement element : userTable.getUserNames()) {
+            assertTrue(element.isDisplayed());
+        }
     }
 
     @Then ("(\\d+) Description texts under images should be displayed on Users Table on User Table Page$")
     public void description_texts_under_images_should_be_displayed_on_users_table_on_user_table_page(int number) {
-        assertEquals(userTable.getDescriptions().size(), number);
+        assertEquals(userTable.getDescriptionsCol().size(), number);
+        for(WebElement element : userTable.getDescriptionsCol()) {
+            assertTrue(element.isDisplayed());
+        }
     }
 
     @Then ("(\\d+) checkboxes should be displayed on Users Table on User Table Page$")
     public void checkboxes_should_be_displayed_on_users_table_on_user_table_page(int number) {
         assertEquals(userTable.getUsersCheckboxes().size(), number);
-
+        for(WebElement element : userTable.getUsersCheckboxes()) {
+            assertTrue(element.isDisplayed());
+        }
     }
 
-//    @Then("User table should contain following values:")
-//    public void user_table_should_contain_following_values(DataTable table) {
-//        assertEquals(userTable.getUserTable());
-//
-//    }
+    @Then("User table should contain following values:")
+    public void user_table_should_contain_following_values(DataTable table) {
+        List<List<String>> rows = table.asLists(String.class);
+        List<List<String>> data = rows.subList(1, rows.size());
+            for (int i = 0; i < data.size(); i++) {
+                List<String> row = data.get(i);
+                assertEquals(userTable.getNumberCol().get(i).getText(), row.get(0));
+                assertEquals(userTable.getUserCol().get(i).getText(), row.get(1));
+                assertEquals(userTable.getDescriptionText().get(i), row.get(2));
+            }
+    }
 
     @Then("droplist should contain values in column Type for user Roman:")
     public void droplist_should_contain_values_in_column_type_for_user_roman(List<String> list) {
@@ -113,13 +130,4 @@ public class ThenStepDef extends AbstractBaseStepDef {
             assertEquals(userTable.getRomanDropdown().get(i).getText(), list.get(i+1));
         }
     }
-
-
-
-
-
-
-
-
-
 }

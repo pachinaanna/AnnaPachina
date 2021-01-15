@@ -1,13 +1,12 @@
 package com.epam.trn.hw5.pages;
 
-import com.epam.trn.hw5.components.Checkbox;
 import com.epam.trn.hw5.components.UsersTable;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import java.nio.file.attribute.UserPrincipalNotFoundException;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class UserTable extends AbstractPage {
 
@@ -25,12 +24,12 @@ public class UserTable extends AbstractPage {
         return usersTable.getUserNames();
     }
 
-    public List<WebElement> getDescriptions() {
-        return usersTable.getDescriptions();
+    public List<String> getDescriptionText() {
+        return usersTable.getDescriptionText();
     }
 
-    public WebElement getUserTable() {
-        return usersTable.getUserTable();
+    public List<WebElement> getDescriptionsCol() {
+        return usersTable.getDescriptionCol();
     }
 
     public List<WebElement> getUsersCheckboxes() {
@@ -38,21 +37,32 @@ public class UserTable extends AbstractPage {
     }
 
     public WebElement getCheckboxForUser(String userName) {
-        for (WebElement item : usersTable.getUsersCheckboxes()) {
-            if (userName.equals(item.getText())) {
-                return item;
-            }
+        Map<String, Integer> users = new HashMap<>();
+        for (int i=0; i<usersTable.getUserCol().size(); i++) {
+            users.put(usersTable.getUserCol().get(i).getText(), i);
         }
-        return null;
+           Integer index = users.get(userName);
+        System.out.println(getUsersCheckboxes().get(index).getText());
+
+        return getUsersCheckboxes().get(index);
     }
 
     public void selectCheckbox(String checkbox, String userName) {
-        if(checkbox.equals(getCheckboxForUser(userName).getText()));
+        System.out.println(getCheckboxForUser(userName).getText());
+//        if(checkbox.equals(getCheckboxForUser(userName).getText()));
         getCheckboxForUser(userName).click();
     }
 
     public List<WebElement> getRomanDropdown() {
         System.out.println(usersTable.getRomanDropdown().size());
         return usersTable.getRomanDropdown();
+    }
+
+    public List<WebElement> getNumberCol() {
+        return usersTable.getNumberCol();
+    }
+
+    public List<WebElement> getUserCol() {
+        return usersTable.getUserCol();
     }
 }
