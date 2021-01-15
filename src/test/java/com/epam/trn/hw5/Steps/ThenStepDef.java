@@ -1,6 +1,6 @@
 package com.epam.trn.hw5.Steps;
 
-import com.epam.trn.hw5.DriverSingleton;
+import com.epam.trn.hw5.utils.DriverSingleton;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Then;
 import org.openqa.selenium.WebElement;

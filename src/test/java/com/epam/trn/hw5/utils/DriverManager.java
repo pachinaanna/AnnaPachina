@@ -1,4 +1,4 @@
-package com.epam.trn.hw5;
+package com.epam.trn.hw5.utils;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;

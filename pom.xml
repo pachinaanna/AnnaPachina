@@ -28,22 +28,12 @@
 
     <profiles>
         <profile>
-            <id>exercise-1</id>
+            <id>cucumber_tests</id>
             <activation>
                 <activeByDefault>false</activeByDefault>
             </activation>
             <properties>
-                <suite.file>${project.basedir}/src/test/resources/Exercise1.xml</suite.file>
-            </properties>
-        </profile>
-
-        <profile>
-            <id>exercise-2</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
-            <properties>
-                <suite.file>${project.basedir}/src/test/resources/Exercise2.xml</suite.file>
+                <suite.file>${project.basedir}/src/test/resources/hw5/cucumber_test.xml</suite.file>
             </properties>
         </profile>
 
@@ -101,12 +91,11 @@
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-testng</artifactId>
             <version>${cucumber.version}</version>
-            <scope>test</scope>
         </dependency>
 
         <dependency>
             <groupId>io.qameta.allure</groupId>
-            <artifactId>allure-cucumber4-jvm</artifactId>
+            <artifactId>allure-cucumber6-jvm</artifactId>
             <version>${allure.version}</version>
             <scope>test</scope>
         </dependency>
@@ -133,7 +122,7 @@
                 <version>${surefire.version}</version>
                 <configuration>
                     <suiteXmlFiles>
-                        <suiteXmlFile>${suite.file}</suiteXmlFile>
+                        <suiteXmlFile>${project.basedir}/src/test/resources/hw5/cucumber_test.xml</suiteXmlFile>
                     </suiteXmlFiles>
                     <argLine>
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"

@@ -1,4 +1,4 @@
-Feature:
+Feature: Exercise 3
 
   Scenario:
     Given I open JDI GitHub site

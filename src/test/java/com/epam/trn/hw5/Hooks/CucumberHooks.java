@@ -1,6 +1,6 @@
 package com.epam.trn.hw5.Hooks;
 
-import com.epam.trn.hw5.DriverSingleton;
+import com.epam.trn.hw5.utils.DriverSingleton;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 
@@ -15,5 +15,4 @@ public class CucumberHooks {
     public void tearDown() {
         DriverSingleton.closeDriver();
     }
-
 }

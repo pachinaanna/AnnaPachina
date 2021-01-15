@@ -3,10 +3,8 @@ package com.epam.trn.hw5;
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 
-@CucumberOptions(
-        features = {"hw5"}
-//        plugin = {"io.qameta.allure:allure-cucumber6-jvm:2.13.7"}
-)
-public class Runner extends AbstractTestNGCucumberTests {
+@CucumberOptions(plugin = {"io.qameta.allure.cucumber6jvm.AllureCucumber6Jvm"},
 
+features = {"classpath:hw5"})
+public class Runner extends AbstractTestNGCucumberTests {
 }

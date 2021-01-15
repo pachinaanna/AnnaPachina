@@ -1,6 +1,6 @@
 package com.epam.trn.hw5.Steps;
 
-import com.epam.trn.hw5.DriverSingleton;
+import com.epam.trn.hw5.utils.DriverSingleton;
 import com.epam.trn.hw5.components.HeaderMenu;
 import com.epam.trn.hw5.pages.DifferentElementsPage;
 import com.epam.trn.hw5.pages.HomePage;
@@ -25,7 +25,6 @@ public abstract class AbstractBaseStepDef {
         headerMenu = new HeaderMenu(webDriver);
         userTable = new UserTable(webDriver);
         properties = getProperties("expectedResults.properties");
-
     }
 
     public Properties getProperties(String fileName) throws IOException {
