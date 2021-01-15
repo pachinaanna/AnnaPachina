@@ -124,10 +124,16 @@ public class ThenStepDef extends AbstractBaseStepDef {
             }
     }
 
-    @Then("droplist should contain values in column Type for user Roman:")
-    public void droplist_should_contain_values_in_column_type_for_user_roman(List<String> list) {
+    @Then("droplist should contain values in column Type for user {string}:")
+    public void droplist_should_contain_values_in_column_type_for_user(String user, List<String> list) {
         for (int i = 0; i < list.size()-1; i++) {
-            assertEquals(userTable.getRomanDropdown().get(i).getText(), list.get(i+1));
+            assertEquals(userTable.selectDropdownForUser(user).get(i).getText(), list.get(i+1));
         }
+    }
+
+    @Then("(\\d+) log row has \\\"([^\\\"]*)\\\" text in log section$")
+    public void log_row_has_text_in_log_section(int q, String text) {
+        assertEquals(userTable.getLogText().size(), q);
+        assertEquals(userTable.getLogText().get(0), text);
     }
 }

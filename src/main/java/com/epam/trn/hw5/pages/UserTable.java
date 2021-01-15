@@ -1,9 +1,11 @@
 package com.epam.trn.hw5.pages;
 
 import com.epam.trn.hw5.components.UsersTable;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -36,26 +38,25 @@ public class UserTable extends AbstractPage {
         return usersTable.getUsersCheckboxes();
     }
 
-    public WebElement getCheckboxForUser(String userName) {
+    public WebElement selectCheckboxForUser(String checkbox, String userName) {
         Map<String, Integer> users = new HashMap<>();
         for (int i=0; i<usersTable.getUserCol().size(); i++) {
             users.put(usersTable.getUserCol().get(i).getText(), i);
         }
            Integer index = users.get(userName);
-        System.out.println(getUsersCheckboxes().get(index).getText());
-
-        return getUsersCheckboxes().get(index);
+        if (checkbox.equals(usersTable.getCheckboxesLabels().get(index).getText())) {
+            return getUsersCheckboxes().get(index);
+        }
+        return null;
     }
 
-    public void selectCheckbox(String checkbox, String userName) {
-        System.out.println(getCheckboxForUser(userName).getText());
-//        if(checkbox.equals(getCheckboxForUser(userName).getText()));
-        getCheckboxForUser(userName).click();
-    }
-
-    public List<WebElement> getRomanDropdown() {
-        System.out.println(usersTable.getRomanDropdown().size());
-        return usersTable.getRomanDropdown();
+    public List<WebElement> selectDropdownForUser(String userName) {
+        Map<String, Integer> users = new HashMap<>();
+        for (int i=0; i<usersTable.getUserCol().size(); i++) {
+            users.put(usersTable.getUserCol().get(i).getText(), i);
+        }
+        Integer index = users.get(userName);
+        return usersTable.getAllDropdowns().get(index).findElements(By.xpath("//option"));
     }
 
     public List<WebElement> getNumberCol() {
@@ -64,5 +65,13 @@ public class UserTable extends AbstractPage {
 
     public List<WebElement> getUserCol() {
         return usersTable.getUserCol();
+    }
+
+    public List<String> getLogText() {
+        List<String> logText = new ArrayList<>();
+        for (WebElement log : usersTable.getLogs()) {
+            logText.add(log.getText().substring(9));
+        }
+        return logText;
     }
 }

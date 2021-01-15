@@ -47,18 +47,15 @@ public class UsersTable extends AbstractPageComposite {
     private List<WebElement> usersCheckboxes;
 
     public List<WebElement> getUsersCheckboxes() {
-        for(WebElement el : usersCheckboxes) {
-            System.out.println(el.getText());
-        }
         return usersCheckboxes;
     }
 
-//    @FindBy(id = "user-table")
-//    private WebElement userTable;
-//
-//    public WebElement getUserTable() {
-//        return userTable;
-//    }
+    @FindBy(xpath = "//div[@class='user-descr']//label")
+    private List<WebElement> checkboxesLabels;
+
+    public List<WebElement> getCheckboxesLabels() {
+        return checkboxesLabels;
+    }
 
     @FindBy(xpath = "//table[@id='user-table']//tr//td[1]")
     private List<WebElement> numberCol;
@@ -74,25 +71,18 @@ public class UsersTable extends AbstractPageComposite {
         return userCol;
     }
 
-//    @FindBy(xpath = "//table[@id='user-table']//tr//td[4]")
-//    private List<WebElement> descriptionCol;
-//
-//    public List<WebElement> getDescriptionCol() {
-//        return descriptionCol;
-//    }
+    @FindBy(xpath = "//td//select")
+    private List<WebElement> allDropdowns;
 
-//    @FindBy(xpath = "//td//select")
-//    private List<WebElement> allDropdowns;
-//
-//    public List<WebElement> getAllDropdowns() {
-//        return allDropdowns;
-//    }
+    public List<WebElement> getAllDropdowns() {
+        return allDropdowns;
+    }
 
-    @FindBy(xpath = "//tr[1]/td[2]/select[1]//option")
-    private List<WebElement> romanDropdown;
+    @FindBy(css = ".panel-body-list > li")
+    private List<WebElement> logs;
 
-    public List<WebElement> getRomanDropdown() {
-        return romanDropdown;
+    public List<WebElement> getLogs() {
+        return logs;
     }
 }
 

@@ -75,6 +75,6 @@ public class WhenStepDef extends AbstractBaseStepDef {
 
     @When("I select {string} checkbox for {string}")
     public void i_select_checkbox_for(String checkbox, String userName) {
-        userTable.selectCheckbox(checkbox, userName);
+        userTable.selectCheckboxForUser(checkbox, userName).click();
     }
 }
