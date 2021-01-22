@@ -66,9 +66,9 @@
         </profile>
 
         <profile>
-            <id>all-tests</id>
+            <id>tests-hw3</id>
             <activation>
-                <activeByDefault>true</activeByDefault>
+                <activeByDefault>false</activeByDefault>
             </activation>
             <properties>
                 <suite.file>${project.basedir}/src/test/resources/hw3/AllTests.xml</suite.file>
@@ -88,7 +88,7 @@
         <profile>
             <id>exercise-2</id>
             <activation>
-                <activeByDefault>false</activeByDefault>
+                <activeByDefault>true</activeByDefault>
             </activation>
             <properties>
                 <suite.file>${project.basedir}/src/test/resources/hw4/Exercise2.xml</suite.file>
@@ -104,6 +104,7 @@
                 <suite.file>${project.basedir}/src/test/resources/hw5/cucumber_test.xml</suite.file>
             </properties>
         </profile>
+
     </profiles>
 
     <dependencies>

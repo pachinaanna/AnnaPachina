@@ -1,9 +1,0 @@
-<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
-<suite name="Test for all calculator operations">
-
-    <test name="All operations">
-        <packages>
-            <package name="com.epam.trn.hw1.*"/>
-        </packages>
-    </test>
-</suite>
