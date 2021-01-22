@@ -12,7 +12,7 @@ public class Radio extends AbstractPageComposite{
         super(webDriver);
     }
 
-    @FindBy(xpath = "//label[@class='label-radio']")
+    @FindBy(css = ".label-radio")
     private List<WebElement> radioButtons;
 
     public List<WebElement> getRadioButtons() {

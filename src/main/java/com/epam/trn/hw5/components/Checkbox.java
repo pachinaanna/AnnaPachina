@@ -12,7 +12,7 @@ public class Checkbox extends AbstractPageComposite {
         super(webDriver);
     }
 
-    @FindBy (xpath = "//label[@class='label-checkbox']")
+    @FindBy (css = ".label-checkbox")
     private List<WebElement> checkboxes;
 
     public List<WebElement> getCheckboxes() {

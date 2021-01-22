@@ -12,14 +12,14 @@ public ColorsMenu(WebDriver webDriver) {
     super(webDriver);
 }
 
-    @FindBy(xpath = "//select[@class='uui-form-element']")
+    @FindBy(css = ".colors>select")
     private WebElement colorsMenu;
 
     public void clickColorsMenu() {
         colorsMenu.click();
     }
 
-    @FindBy(xpath = "//select[@class='uui-form-element']/option")
+    @FindBy(css = ".uui-form-element>option")
     private List<WebElement> colors;
 
     public List<WebElement> getColors() {

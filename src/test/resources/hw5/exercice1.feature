@@ -15,10 +15,7 @@ Feature: Exercise 1
   Scenario: login test
     When I login as a user 'Roman Iovlev'
     Then user should be logged
-
-  Scenario: assert that user name in the right-top side screen that user is logged
-    When I login as a user 'Roman Iovlev'
-    Then user name should be equal to 'ROMAN IOVLEV'
+    And user name should be equal to 'ROMAN IOVLEV'
 
   Scenario: go to Different Element Page
     Given I login as a user 'Roman Iovlev'
