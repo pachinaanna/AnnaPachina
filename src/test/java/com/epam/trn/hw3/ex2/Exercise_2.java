@@ -1,13 +1,13 @@
 package com.epam.trn.hw3.ex2;
 
 
+import com.epam.trn.hw3.AbstractTest;
 import com.epam.trn.hw3.Steps.TestSteps;
 import com.epam.trn.hw3.components.Checkbox;
 import com.epam.trn.hw3.components.ColorsMenu;
 import com.epam.trn.hw3.components.Radio;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
-import com.epam.trn.hw3.AbstractTest;
 
 import java.io.IOException;
 
