@@ -1,49 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.epam.trn.qa</groupId>
-    <artifactId>com.epam.trn.qa.hw1.Anna_Pachina</artifactId>
+    <artifactId>com.epam.trn.qa.hw2.Anna_Pachina</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
         <testng.version>7.3.0</testng.version>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.8</java.version>
+        <selenium.version>3.141.59</selenium.version>
+        <slf4j.version>1.6.2</slf4j.version>
+        <commons-io.version>2.8.0</commons-io.version>
+        <bonigarcia.version>4.2.2</bonigarcia.version>
+
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
     <profiles>
-        <profile>
-            <id>All-tests</id>
-            <activation>
-                <activeByDefault>false</activeByDefault>
-            </activation>
-            <properties>
-                <suite.file>${project.basedir}/src/test/resources/AllOperations.xml</suite.file>
-            </properties>
-        </profile>
+    <profile>
+        <id>exercise-1</id>
+        <activation>
+            <activeByDefault>false</activeByDefault>
+        </activation>
+        <properties>
+            <suite.file>${project.basedir}/src/test/resources/Exercise1Test.xml</suite.file>
+        </properties>
+    </profile>
 
-        <profile>
-            <id>Mult-and-div</id>
-            <activation>
-                <activeByDefault>false</activeByDefault>
-            </activation>
-            <properties>
-                <suite.file>${project.basedir}/src/test/resources/MultiplyAndDivision.xml</suite.file>
-            </properties>
-        </profile>
-
-        <profile>
-            <id>Sum-and-sub</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
-            <properties>
-                <suite.file>${project.basedir}/src/test/resources/SumAndSubtract.xml</suite.file>
-            </properties>
-        </profile>
+    <profile>
+        <id>exercise-2</id>
+        <activation>
+            <activeByDefault>true</activeByDefault>
+        </activation>
+        <properties>
+            <suite.file>${project.basedir}/src/test/resources/Exercise2Test.xml</suite.file>
+        </properties>
+    </profile>
     </profiles>
 
     <dependencies>
@@ -55,11 +51,30 @@
         </dependency>
 
         <dependency>
-            <groupId>com.epam</groupId>
-            <artifactId>calculator-1.0</artifactId>
-            <version>1.0</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/lib/calculator-1.0.jar</systemPath>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>${selenium.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>${commons-io.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>io.github.bonigarcia</groupId>
+            <artifactId>webdrivermanager</artifactId>
+            <version>${bonigarcia.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>${slf4j.version}</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 
