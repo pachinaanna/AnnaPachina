@@ -1,15 +1,17 @@
-package com.epam.trn.hw6.utils;
+package com.epam.trn.hw6.entities;
 
 import com.epam.jdi.tools.DataClass;
+import com.epam.trn.hw6.utils.JsonDataReader;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class DataSet extends DataClass<JsonDataReader> {
+public class MetalsAndColorsFormData extends DataClass<JsonDataReader> {
 
-    public DataSet() {
+    public MetalsAndColorsFormData() {
     }
 
-    public DataSet(ArrayList<String> summary, ArrayList<String> elements, String color, String metals, ArrayList<String> vegetables) {
+    public MetalsAndColorsFormData(ArrayList<String> summary, ArrayList<String> elements, String color, String metals, ArrayList<String> vegetables) {
         this.summary = summary;
         this.elements = elements;
         this.color = color;
