@@ -12,14 +12,14 @@ public class JdiSite {
     public static HomePage homePage;
 
     @Url("/metals-colors")
-    public static MetalsAndColorsPage metalsAndColors;
+    public static MetalsAndColorsPage metalsAndColorsPage;
 
     public static void openHomePage() {
         homePage.open();
     }
 
     public static void checkThatMetalsAndColorsIsOpened() {
-        metalsAndColors.checkOpened();
+        metalsAndColorsPage.checkOpened();
     }
 
 }

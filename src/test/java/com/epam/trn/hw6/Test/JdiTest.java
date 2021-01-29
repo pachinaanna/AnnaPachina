@@ -27,8 +27,8 @@ public class JdiTest implements TestInit {
         homePage.selectFromHeaderMenu(HeaderMenuItems.METALS_COLORS);
         checkThatMetalsAndColorsIsOpened();
         metalsAndColorsForm.submitForm(set);
-        for (int i = 0; i < metalsAndColors.resultSection.size(); i++) {
-            assertTrue(metalsAndColors.resultSectionContainsData(set, i));
+        for (int i = 0; i < metalsAndColorsPage.resultSection.size(); i++) {
+            assertTrue(metalsAndColorsPage.resultSectionContainsData(set, i));
         }
     }
 
