@@ -11,7 +11,6 @@
 
     <properties>
         <testng.version>7.3.0</testng.version>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.8</java.version>
         <selenium.version>3.141.59</selenium.version>
         <slf4j.version>1.6.2</slf4j.version>
@@ -31,6 +30,76 @@
     </properties>
 
     <profiles>
+        <profile>
+            <id>Tests-hw1</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <properties>
+                <suite.file>${project.basedir}/src/test/resources/hw1/AllOperations.xml</suite.file>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>Mult-and-div</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <properties>
+                <suite.file>${project.basedir}/src/test/resources/hw1/MultiplyAndDivision.xml</suite.file>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>Sum-and-sub</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <properties>
+                <suite.file>${project.basedir}/src/test/resources/hw1/SumAndSubtract.xml</suite.file>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>tests-hw2</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <properties>
+                <suite.file>${project.basedir}/src/test/resources/hw2/AllTests.xml</suite.file>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>tests-hw3</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <properties>
+                <suite.file>${project.basedir}/src/test/resources/hw3/AllTests.xml</suite.file>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>exercise-1</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <properties>
+                <suite.file>${project.basedir}/src/test/resources/hw4/Exercise1.xml</suite.file>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>exercise-2</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <suite.file>${project.basedir}/src/test/resources/hw4/Exercise2.xml</suite.file>
+            </properties>
+        </profile>
+
         <profile>
             <id>cucumber_tests</id>
             <activation>
@@ -58,9 +127,18 @@
         </dependency>
 
         <dependency>
+            <groupId>com.epam</groupId>
+            <artifactId>calculator-1.0</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/calculator-1.0.jar</systemPath>
+        </dependency>
+
+        <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
             <version>${selenium.version}</version>
+<!--            <scope>test</scope>-->
         </dependency>
 
         <dependency>
@@ -125,9 +203,11 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.8.1</version>
                 <configuration>
+
 <!--                    <source>1.8</source>-->
 <!--                    <target>1.8</target>-->
 <!--                    <encoding>UTF-8</encoding>-->
+
                     <source>${java.version}</source>
                     <target>${java.version}</target>
                 </configuration>
@@ -138,8 +218,9 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${surefire.version}</version>
                 <configuration>
-                    <suiteXmlFiles>
-                        <suiteXmlFile>${project.basedir}/src/test/resources/hw6/JdiTest.xml</suiteXmlFile>
+
+                        <suiteXmlFile>${suite.file}</suiteXmlFile>
+
                     </suiteXmlFiles>
                     <argLine>
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
