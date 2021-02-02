@@ -1,261 +1,209 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
+<modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.epam.trn.qa</groupId>
-    <artifactId>com.epam.trn.qa.Anna_Pachina</artifactId>
-    <version>1.0-SNAPSHOT</version>
+<groupId>com.epam.trn.qa</groupId>
+<artifactId>com.epam.trn.qa.Anna_Pachina</artifactId>
+<version>1.0-SNAPSHOT</version>
 
-    <properties>
-        <testng.version>7.3.0</testng.version>
-        <java.version>1.8</java.version>
-        <selenium.version>3.141.59</selenium.version>
-        <slf4j.version>1.6.2</slf4j.version>
-        <commons-io.version>2.8.0</commons-io.version>
-        <bonigarcia.version>4.2.2</bonigarcia.version>
-        <aspectj.version>1.8.10</aspectj.version>
-        <allure.version>2.13.7</allure.version>
-        <allure.maven.version>2.8</allure.maven.version>
-        <surefire.version>2.19.1</surefire.version>
-        <cucumber.version>6.9.1</cucumber.version>
-        <jdi.version>1.3.2</jdi.version>
-        <driver>chrome</driver>
-        <domain>https://jdi-testing.github.io/jdi-light/</domain>
-        <jackson.version>2.12.1</jackson.version>
+<properties>
+    <testng.version>7.3.0</testng.version>
+    <java.version>1.8</java.version>
+    <selenium.version>3.141.59</selenium.version>
+    <slf4j.version>1.6.2</slf4j.version>
+    <commons-io.version>2.8.0</commons-io.version>
+    <bonigarcia.version>4.2.2</bonigarcia.version>
+    <aspectj.version>1.8.10</aspectj.version>
+    <allure.version>2.13.7</allure.version>
+    <allure.maven.version>2.8</allure.maven.version>
+    <surefire.version>2.19.1</surefire.version>
+    <cucumber.version>6.9.1</cucumber.version>
+    <jdi.version>1.3.2</jdi.version>
+    <driver>chrome</driver>
+    <domain>https://jdi-testing.github.io/jdi-light/</domain>
+    <jackson.version>2.12.1</jackson.version>
+    <rest.assured.version>4.3.3</rest.assured.version>
+    <json.version>2.8.6</json.version>
 
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+</properties>
 
-    <profiles>
-        <profile>
-            <id>Tests-hw1</id>
-            <activation>
-                <activeByDefault>false</activeByDefault>
-            </activation>
-            <properties>
-                <suite.file>${project.basedir}/src/test/resources/hw1/AllOperations.xml</suite.file>
-            </properties>
-        </profile>
+<profiles>
+    <profile>
+        <id>cucumber_tests</id>
+        <activation>
+            <activeByDefault>false</activeByDefault>
+        </activation>
+        <properties>
+            <suite.file>${project.basedir}/src/test/resources/hw6/JdiTest.xml</suite.file>
+        </properties>
+    </profile>
+</profiles>
 
-        <profile>
-            <id>Mult-and-div</id>
-            <activation>
-                <activeByDefault>false</activeByDefault>
-            </activation>
-            <properties>
-                <suite.file>${project.basedir}/src/test/resources/hw1/MultiplyAndDivision.xml</suite.file>
-            </properties>
-        </profile>
+<dependencies>
 
-        <profile>
-            <id>Sum-and-sub</id>
-            <activation>
-                <activeByDefault>false</activeByDefault>
-            </activation>
-            <properties>
-                <suite.file>${project.basedir}/src/test/resources/hw1/SumAndSubtract.xml</suite.file>
-            </properties>
-        </profile>
+    <dependency>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-databind</artifactId>
+        <version>${jackson.version}</version>
 
-        <profile>
-            <id>tests-hw2</id>
-            <activation>
-                <activeByDefault>false</activeByDefault>
-            </activation>
-            <properties>
-                <suite.file>${project.basedir}/src/test/resources/hw2/AllTests.xml</suite.file>
-            </properties>
-        </profile>
+    </dependency>
 
-        <profile>
-            <id>tests-hw3</id>
-            <activation>
-                <activeByDefault>false</activeByDefault>
-            </activation>
-            <properties>
-                <suite.file>${project.basedir}/src/test/resources/hw3/AllTests.xml</suite.file>
-            </properties>
-        </profile>
+    <dependency>
+        <groupId>org.testng</groupId>
+        <artifactId>testng</artifactId>
+        <version>${testng.version}</version>
+    </dependency>
 
-        <profile>
-            <id>exercise-1</id>
-            <activation>
-                <activeByDefault>false</activeByDefault>
-            </activation>
-            <properties>
-                <suite.file>${project.basedir}/src/test/resources/hw4/Exercise1.xml</suite.file>
-            </properties>
-        </profile>
+    <dependency>
+        <groupId>org.seleniumhq.selenium</groupId>
+        <artifactId>selenium-java</artifactId>
+        <version>${selenium.version}</version>
+    </dependency>
 
-        <profile>
-            <id>exercise-2</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
-            <properties>
-                <suite.file>${project.basedir}/src/test/resources/hw4/Exercise2.xml</suite.file>
-            </properties>
-        </profile>
+    <dependency>
+        <groupId>commons-io</groupId>
+        <artifactId>commons-io</artifactId>
+        <version>${commons-io.version}</version>
+        <scope>test</scope>
+    </dependency>
 
-        <profile>
-            <id>cucumber_tests</id>
-            <activation>
-                <activeByDefault>false</activeByDefault>
-            </activation>
-            <properties>
-                <suite.file>${project.basedir}/src/test/resources/hw6/JdiTest.xml</suite.file>
-            </properties>
-        </profile>
-    </profiles>
+    <dependency>
+        <groupId>io.github.bonigarcia</groupId>
+        <artifactId>webdrivermanager</artifactId>
+        <version>${bonigarcia.version}</version>
+        <scope>test</scope>
+    </dependency>
 
-    <dependencies>
+    <!--        <dependency>-->
+    <!--            <groupId>org.slf4j</groupId>-->
+    <!--            <artifactId>slf4j-simple</artifactId>-->
+    <!--            <version>${slf4j.version}</version>-->
+    <!--            <scope>test</scope>-->
+    <!--        </dependency>-->
 
-        <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-databind</artifactId>
-            <version>${jackson.version}</version>
+    <dependency>
+        <groupId>io.qameta.allure</groupId>
+        <artifactId>allure-testng</artifactId>
+        <version>${allure.version}</version>
+        <scope>test</scope>
+    </dependency>
 
-        </dependency>
+    <dependency>
+        <groupId>io.cucumber</groupId>
+        <artifactId>cucumber-java</artifactId>
+        <version>${cucumber.version}</version>
+    </dependency>
 
-        <dependency>
-            <groupId>org.testng</groupId>
-            <artifactId>testng</artifactId>
-            <version>${testng.version}</version>
-        </dependency>
+    <dependency>
+        <groupId>io.cucumber</groupId>
+        <artifactId>cucumber-testng</artifactId>
+        <version>${cucumber.version}</version>
+    </dependency>
 
-        <dependency>
-            <groupId>com.epam</groupId>
-            <artifactId>calculator-1.0</artifactId>
-            <version>1.0</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/lib/calculator-1.0.jar</systemPath>
-        </dependency>
+    <dependency>
+        <groupId>io.qameta.allure</groupId>
+        <artifactId>allure-cucumber6-jvm</artifactId>
+        <version>${allure.version}</version>
+        <scope>test</scope>
+    </dependency>
 
-        <dependency>
-            <groupId>org.seleniumhq.selenium</groupId>
-            <artifactId>selenium-java</artifactId>
-            <version>${selenium.version}</version>
-<!--            <scope>test</scope>-->
-        </dependency>
+    <dependency>
+        <groupId>com.epam.jdi</groupId>
+        <artifactId>jdi-light-html</artifactId>
+        <version>${jdi.version}</version>
+    </dependency>
 
-        <dependency>
-            <groupId>commons-io</groupId>
-            <artifactId>commons-io</artifactId>
-            <version>${commons-io.version}</version>
-            <scope>test</scope>
-        </dependency>
+    <!-- https://mvnrepository.com/artifact/io.rest-assured/rest-assured -->
+    <dependency>
+        <groupId>io.rest-assured</groupId>
+        <artifactId>rest-assured</artifactId>
+        <version>${rest.assured.version}</version>
+        <scope>test</scope>
+    </dependency>
+    <dependency>
+        <groupId>org.projectlombok</groupId>
+        <artifactId>lombok</artifactId>
+        <version>RELEASE</version>
+        <scope>test</scope>
+    </dependency>
 
-        <dependency>
-            <groupId>io.github.bonigarcia</groupId>
-            <artifactId>webdrivermanager</artifactId>
-            <version>${bonigarcia.version}</version>
-            <scope>test</scope>
-        </dependency>
+    <dependency>
+        <groupId>com.google.code.gson</groupId>
+        <artifactId>gson</artifactId>
+        <version>${json.version}</version>
+    </dependency>
+    <dependency>
+        <groupId>io.rest-assured</groupId>
+        <artifactId>rest-assured</artifactId>
+        <version>4.3.3</version>
+        <scope>compile</scope>
+    </dependency>
+    <dependency>
+        <groupId>org.projectlombok</groupId>
+        <artifactId>lombok</artifactId>
+        <version>1.18.18</version>
+        <scope>compile</scope>
+    </dependency>
 
-<!--        <dependency>-->
-<!--            <groupId>org.slf4j</groupId>-->
-<!--            <artifactId>slf4j-simple</artifactId>-->
-<!--            <version>${slf4j.version}</version>-->
-<!--            <scope>test</scope>-->
-<!--        </dependency>-->
 
-        <dependency>
+</dependencies>
+
+<build>
+    <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>3.8.1</version>
+            <configuration>
+                <source>${java.version}</source>
+                <target>${java.version}</target>
+            </configuration>
+        </plugin>
+
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <version>${surefire.version}</version>
+            <configuration>
+                <suiteXmlFiles>
+                    <suiteXmlFile>${project.basedir}/src/test/resources/hw6/JdiTest.xml</suiteXmlFile>
+                </suiteXmlFiles>
+                <argLine>
+                    -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
+                </argLine>
+                <!--                    <properties>-->
+                <!--                        <property>-->
+                <!--                            <name>listener</name>-->
+                <!--                            <value>io.qameta.allure.testng.AllureTestNg</value>-->
+                <!--                        </property>-->
+                <!--                    </properties>-->
+            </configuration>
+            <dependencies>
+                <dependency>
+                    <groupId>org.aspectj</groupId>
+                    <artifactId>aspectjweaver</artifactId>
+                    <version>${aspectj.version}</version>
+                </dependency>
+            </dependencies>
+        </plugin>
+
+        <plugin>
             <groupId>io.qameta.allure</groupId>
-            <artifactId>allure-testng</artifactId>
-            <version>${allure.version}</version>
-            <scope>test</scope>
-        </dependency>
+            <artifactId>allure-maven</artifactId>
+            <version>${allure.maven.version}</version>
+        </plugin>
+    </plugins>
 
-        <dependency>
-            <groupId>io.cucumber</groupId>
-            <artifactId>cucumber-java</artifactId>
-            <version>${cucumber.version}</version>
-        </dependency>
+    <resources>
+        <resource>
+            <directory>src/test/resources</directory>
+            <filtering>true</filtering>
+        </resource>
+    </resources>
 
-        <dependency>
-            <groupId>io.cucumber</groupId>
-            <artifactId>cucumber-testng</artifactId>
-            <version>${cucumber.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>io.qameta.allure</groupId>
-            <artifactId>allure-cucumber6-jvm</artifactId>
-            <version>${allure.version}</version>
-            <scope>test</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>com.epam.jdi</groupId>
-            <artifactId>jdi-light-html</artifactId>
-            <version>${jdi.version}</version>
-        </dependency>
-
-    </dependencies>
-
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.8.1</version>
-                <configuration>
-
-<!--                    <source>1.8</source>-->
-<!--                    <target>1.8</target>-->
-<!--                    <encoding>UTF-8</encoding>-->
-
-                    <source>${java.version}</source>
-                    <target>${java.version}</target>
-                </configuration>
-            </plugin>
-
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>${surefire.version}</version>
-                <configuration>
-
-                        <suiteXmlFile>${suite.file}</suiteXmlFile>
-
-                    </suiteXmlFiles>
-                    <argLine>
-                        -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
-                    </argLine>
-<!--                    <properties>-->
-<!--                        <property>-->
-<!--                            <name>listener</name>-->
-<!--                            <value>io.qameta.allure.testng.AllureTestNg</value>-->
-<!--                        </property>-->
-<!--                    </properties>-->
-                </configuration>
-                <dependencies>
-                    <dependency>
-                        <groupId>org.aspectj</groupId>
-                        <artifactId>aspectjweaver</artifactId>
-                        <version>${aspectj.version}</version>
-                    </dependency>
-                </dependencies>
-            </plugin>
-
-            <plugin>
-                <groupId>io.qameta.allure</groupId>
-                <artifactId>allure-maven</artifactId>
-                <version>${allure.maven.version}</version>
-            </plugin>
-        </plugins>
-
-        <resources>
-            <resource>
-                <directory>src/test/resources</directory>
-                <filtering>true</filtering>
-            </resource>
-        </resources>
-
-    </build>
+</build>
 
 <!--    <reporting>-->
 <!--        <excludeDefaults>true</excludeDefaults>-->

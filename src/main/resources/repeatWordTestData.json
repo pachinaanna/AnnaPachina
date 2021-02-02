@@ -1,0 +1,16 @@
+{
+  "data_1": {
+    "text": "I am going going to check this text",
+    "lang": "en",
+    "options": "8",
+    "format": "plain",
+    "expected": "going"
+  },
+  "data_2": {
+    "text": "He always helps me me",
+    "lang": "en",
+    "options": "8",
+    "format": "plain",
+    "expected": "me"
+  }
+}
