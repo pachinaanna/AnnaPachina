@@ -4,36 +4,42 @@ import com.epam.trn.hw8.dto.RequestDto;
 import org.testng.annotations.DataProvider;
 
 import java.io.IOException;
-import java.util.List;
 
 public class JsonDataProvider {
 
-    protected JsonDataReader reader = new JsonDataReader();
-
-    public JsonDataProvider() throws IOException {
+    protected JsonDataReader reader;
+    {
+        try {
+            reader = new JsonDataReader();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
+//    @DataProvider(name = "checkTextWithoutOptions")
+//    public Object[] checkTextData() {
+//        return reader.getCheckTextWithoutOptionsDataSet().toArray();
+//    }
+
+
     @DataProvider(name = "checkTextWithoutOptions")
-    public Object[] checkTextData() throws IOException {
-        List<RequestDto> list = reader.getCheckTextWithoutOptionsDataSet();
-        return list.toArray();
+    public Object[][] checkTextData() {
+        return new Object[][] { {new RequestDto("I dont know what to write", "", "", "", "dont")},
+        };
     }
 
     @DataProvider(name = "ignoreDigitsOptionTestData")
-    public Object[] ignoreDigitsOptionTestData() throws IOException {
-        List<RequestDto> list = reader.getIgnoreDigitsTestDataSet();
-        return list.toArray();
+    public Object[] ignoreDigitsOptionTestData() {
+        return reader.getIgnoreDigitsTestDataSet().toArray();
     }
 
     @DataProvider(name = "repeatWordTestData")
-    public Object[] repeatWordTestData() throws IOException {
-        List<RequestDto> list = reader.getRepeatWordTestDataSet();
-        return list.toArray();
+    public Object[] repeatWordTestData() {
+        return reader.getRepeatWordTestDataSet().toArray();
     }
 
     @DataProvider(name = "ignoreCapitalizationTestData")
-    public Object[] ignoreCapitalizationTestsData() throws IOException {
-        List<RequestDto> list = reader.getIgnoreCapitalizationTestData();
-        return list.toArray();
+    public Object[] ignoreCapitalizationTestsData() {
+        return reader.getIgnoreCapitalizationTestData().toArray();
     }
 }

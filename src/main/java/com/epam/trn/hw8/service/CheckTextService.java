@@ -20,13 +20,4 @@ public class CheckTextService {
                                 .getBody().asString(), ResultDto[].class);
     }
 
-    public ResultDto[] checkTextWithoutParams(RequestDto request) {
-        String json = new CommonService()
-                .postTextNoParams(URI.CHECK_TEXT, request.getText())
-                .getBody().asString();
-        return
-                new Gson().fromJson(
-                        json, ResultDto[].class);
-    }
-
 }

@@ -4,36 +4,25 @@ import com.epam.trn.hw8.dto.RequestDto;
 import com.epam.trn.hw8.dto.ResultDto;
 import com.epam.trn.hw8.service.CheckTextAssertions;
 import com.epam.trn.hw8.service.CheckTextService;
-import lombok.SneakyThrows;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import com.epam.trn.hw8.utils.JsonDataProvider;
 
-import java.util.Properties;
+import static com.epam.trn.hw8.enums.ErrorCodes.*;
 
 public class CheckText {
 
-    @SneakyThrows
-    private Properties getProperties() {
-        Properties props = new Properties();
-        String propFileName = "error_codes.properties";
-        props.load(getClass().getClassLoader().getResourceAsStream(propFileName));
-        return props;
-    }
+    CheckTextService checkTextService;
 
     @BeforeMethod
-    public void setup() {
-    }
-
-    @AfterMethod
-    public void teardown() {
+    public void setUp() {
+        checkTextService = new CheckTextService();
     }
 
     @Test(description = "CheckText method with IGNORE_DIGITS option",
             dataProvider = "ignoreDigitsOptionTestData", dataProviderClass = JsonDataProvider.class)
     public void checkTextWithIgnoreDigitsOption(RequestDto request) {
-        ResultDto[] actual = new CheckTextService().checkTextWithParams(request);
+        ResultDto[] actual = checkTextService.checkTextWithParams(request);
 
         new CheckTextAssertions(actual).verifyThatThereIsNoError();
     }
@@ -41,18 +30,18 @@ public class CheckText {
     @Test(description = "Check text without any options",
             dataProvider = "checkTextWithoutOptions", dataProviderClass = JsonDataProvider.class)
     public void CheckTextWithoutOptions(RequestDto request) {
-        ResultDto[] actual = new CheckTextService().checkTextWithoutParams(request);
+        ResultDto[] actual = checkTextService.checkTextWithParams(request);
 
-        new CheckTextAssertions(actual).verifyErrorCode(getProperties().getProperty("ERROR_UNKNOWN_WORD"))
+        new CheckTextAssertions(actual).verifyErrorCode(ERROR_UNKNOWN_WORD.getCode())
                 .verifyIncorrectWords(request.getExpected());
     }
 
     @Test(description = "CheckText method with FIND_REPEAT_WORD option",
             dataProvider = "repeatWordTestData", dataProviderClass = JsonDataProvider.class)
     public void CheckTextWithFindRepeatWordsOption(RequestDto request) {
-        ResultDto[] actual = new CheckTextService().checkTextWithParams(request);
+        ResultDto[] actual = checkTextService.checkTextWithParams(request);
 
-        new CheckTextAssertions(actual).verifyErrorCode(getProperties().getProperty("ERROR_REPEAT_WORD"))
+        new CheckTextAssertions(actual).verifyErrorCode(ERROR_REPEAT_WORD.getCode())
                 .verifyIncorrectWords(request.getExpected());
     }
 
@@ -60,18 +49,19 @@ public class CheckText {
             dataProvider = "repeatWordTestData", dataProviderClass = JsonDataProvider.class)
     public void CheckTextWithoutFindRepeatWordsOption(RequestDto request) {
         request.setOptions("0");
-        ResultDto[] actual = new CheckTextService().checkTextWithParams(request);
+        ResultDto[] actual = checkTextService.checkTextWithParams(request);
 
         new CheckTextAssertions(actual).verifyThatThereIsNoError().
-                verifyThatThereIsNoThatErrorCode(getProperties().getProperty("ERROR_REPEAT_WORD"));
+                verifyThatThereIsNoThatErrorCode(ERROR_REPEAT_WORD.getCode());
     }
 
     @Test(description = "CheckTexts with IGNORE_CAPITALIZATION option",
             dataProvider = "ignoreCapitalizationTestData", dataProviderClass = JsonDataProvider.class)
     public void CheckTextsWithIgnoreCapitalizationOption(RequestDto request) {
-        ResultDto[] actual = new CheckTextService().checkTextWithParams(request);
+        ResultDto[] actual = checkTextService.checkTextWithParams(request);
 
-        new CheckTextAssertions(actual).verifyThatThereIsNoThatErrorCode(getProperties().getProperty("ERROR_CAPITALIZATION"));
+        new CheckTextAssertions(actual)
+                .verifyThatThereIsNoThatErrorCode(ERROR_CAPITALIZATION.getCode());
     }
 
 
@@ -79,10 +69,10 @@ public class CheckText {
             dataProvider = "ignoreCapitalizationTestData", dataProviderClass = JsonDataProvider.class)
     public void CheckTextWithoutIgnoreCapitalizationOption(RequestDto request) {
         request.setOptions("0");
-        ResultDto[] actual = new CheckTextService().checkTextWithParams(request);
+        ResultDto[] actual = checkTextService.checkTextWithParams(request);
 
         new CheckTextAssertions(actual)
-                .verifyErrorCode(getProperties().getProperty("ERROR_CAPITALIZATION"))
+                .verifyErrorCode(ERROR_CAPITALIZATION.getCode())
                 .verifyIncorrectWords(request.getExpected());
     }
 

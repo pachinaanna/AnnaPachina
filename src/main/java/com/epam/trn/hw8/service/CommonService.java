@@ -1,53 +1,47 @@
 package com.epam.trn.hw8.service;
 
 import static io.restassured.RestAssured.*;
+import static com.epam.trn.hw8.utils.SelectProperties.*;
 
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
-import lombok.SneakyThrows;
 import org.apache.http.HttpStatus;
 import org.hamcrest.Matchers;
+
 import java.util.Map;
-import java.util.Properties;
 
 public class CommonService {
-    private RequestSpecification REQUEST_SPECIFICATION;
 
-    @SneakyThrows
-    private Properties getProperties() {
-        Properties props = new Properties();
-        String propFileName = "test.properties";
-        props.load(getClass().getClassLoader().getResourceAsStream(propFileName));
-        return props;
-    }
+    private RequestSpecification REQUEST_SPECIFICATION;
 
     public CommonService() {
         REQUEST_SPECIFICATION = new RequestSpecBuilder()
-                .setBaseUri(getProperties().getProperty("base.url"))
+//                .setBaseUri("http://speller.yandex.net/services/spellservice.json")
+                .setBaseUri(getTestProperties().getProperty("base.url"))
                 .build();
     }
 
-    public Response postTextNoParams(String uri, String text) {
-        Response response = given(REQUEST_SPECIFICATION)
+    public Response postText(RequestSpecification spec, String uri, String text) {
+        Response response = given(spec)
                 .queryParam("text", text)
-                .post(uri);
-        response.then().statusCode(Matchers.greaterThanOrEqualTo(HttpStatus.SC_OK));
-        response.then().statusCode(Matchers.lessThan(HttpStatus.SC_MULTIPLE_CHOICES));
-        response.then().log().all();
+                .post(uri)
+                .then().statusCode(Matchers.greaterThanOrEqualTo(HttpStatus.SC_OK))
+                .extract().response()
+                .then().statusCode(Matchers.lessThan(HttpStatus.SC_MULTIPLE_CHOICES))
+                .log().all()
+                .extract().response();
         return response;
     }
 
     public Response postTextWithParams(String uri, String text, Map<String, Object> params) {
         RequestSpecification specification = given(REQUEST_SPECIFICATION);
 
-        for(Map.Entry<String, Object> param : params.entrySet()) {
+        for (Map.Entry<String, Object> param : params.entrySet()) {
             specification.param(param.getKey(), param.getValue());
         }
-        Response response = specification.queryParams("text", text)
-                .post(uri);
-        response.then().log().all();
-        return response;
-    }
+
+        return postText(specification, uri, text);
+     }
 
 }
