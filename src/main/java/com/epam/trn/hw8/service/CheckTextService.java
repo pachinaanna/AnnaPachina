@@ -1,6 +1,6 @@
 package com.epam.trn.hw8.service;
 
-import com.epam.trn.hw8.constans.URI;
+import com.epam.trn.hw8.constants.URI;
 import com.epam.trn.hw8.dto.RequestDto;
 import com.epam.trn.hw8.dto.ResultDto;
 import com.google.gson.Gson;

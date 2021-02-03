@@ -1,4 +1,4 @@
-package com.epam.trn.hw8.constans;
+package com.epam.trn.hw8.constants;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

@@ -1,4 +1,4 @@
-package com.epam.trn.hw8.constans;
+package com.epam.trn.hw8.constants;
 
 public class URI {
 
