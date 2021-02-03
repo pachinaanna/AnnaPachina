@@ -17,12 +17,6 @@ public class JsonDataProvider {
         }
     }
 
-//    @DataProvider(name = "checkTextWithoutOptions")
-//    public Object[] checkTextData() {
-//        return reader.getCheckTextWithoutOptionsDataSet().toArray();
-//    }
-
-
     @DataProvider(name = "checkTextWithoutOptions")
     public Object[][] checkTextData() {
         return new Object[][]{
@@ -46,4 +40,5 @@ public class JsonDataProvider {
     public Object[] ignoreCapitalizationTestsData() {
         return reader.getIgnoreCapitalizationTestData().toArray();
     }
+
 }

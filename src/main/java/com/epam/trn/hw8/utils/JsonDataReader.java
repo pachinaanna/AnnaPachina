@@ -13,15 +13,19 @@ import java.util.Map;
 public class JsonDataReader {
 
     protected ObjectMapper objectMapper = new ObjectMapper();
-    public Map<String, RequestDto> checkTextWithoutOptionsData = objectMapper.readValue(new File("src/main/resources/checkTextWithoutOptionsData.json"), new TypeReference<Map<String, RequestDto>>() {
-    });
-    public Map<String, RequestDto> ignoreDigitsTestData = objectMapper.readValue(new File("src/main/resources/ignoreDigitsTestData.json"), new TypeReference<Map<String, RequestDto>>() {
-    });
-    public Map<String, RequestDto> repeatWordTestData = objectMapper.readValue(new File("src/main/resources/repeatWordTestData.json"), new TypeReference<Map<String, RequestDto>>() {
-    });
-    public Map<String, RequestDto> ignoreCapitalizationTestData = objectMapper.readValue(new File("src/main/resources/IgnoreCapitalizationTestData.json"), new TypeReference<Map<String, RequestDto>>() {
-    });
 
+    public Map<String, RequestDto> ignoreDigitsTestData = objectMapper
+            .readValue(new File("src/main/resources/ignoreDigitsTestData.json"),
+                    new TypeReference<Map<String, RequestDto>>() {
+                    });
+    public Map<String, RequestDto> repeatWordTestData = objectMapper
+            .readValue(new File("src/main/resources/repeatWordTestData.json"),
+                    new TypeReference<Map<String, RequestDto>>() {
+                    });
+    public Map<String, RequestDto> ignoreCapitalizationTestData = objectMapper
+            .readValue(new File("src/main/resources/IgnoreCapitalizationTestData.json"),
+                    new TypeReference<Map<String, RequestDto>>() {
+                    });
 
     public JsonDataReader() throws IOException {
     }
@@ -32,10 +36,6 @@ public class JsonDataReader {
             list.add((RequestDto) entry.getValue());
         }
         return list;
-    }
-
-    public List<RequestDto> getCheckTextWithoutOptionsDataSet() {
-        return getDataSet(checkTextWithoutOptionsData);
     }
 
     public List<RequestDto> getIgnoreDigitsTestDataSet() {

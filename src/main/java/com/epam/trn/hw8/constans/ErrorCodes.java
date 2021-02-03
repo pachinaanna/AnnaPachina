@@ -1,5 +1,10 @@
-package com.epam.trn.hw8.enums;
+package com.epam.trn.hw8.constans;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
+@Getter
+@AllArgsConstructor
 public enum ErrorCodes {
 
     ERROR_UNKNOWN_WORD("1"),
@@ -9,11 +14,4 @@ public enum ErrorCodes {
 
     public String code;
 
-    ErrorCodes(String code) {
-        this.code = code;
-    }
-
-    public String getCode() {
-        return code;
-    }
 }

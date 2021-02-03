@@ -35,11 +35,9 @@ public class CommonService {
 
     public Response postTextWithParams(String uri, String text, Map<String, Object> params) {
         RequestSpecification specification = given(REQUEST_SPECIFICATION);
-
         for (Map.Entry<String, Object> param : params.entrySet()) {
             specification.param(param.getKey(), param.getValue());
         }
-
         return postText(specification, uri, text);
     }
 

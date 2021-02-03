@@ -8,7 +8,7 @@ import com.epam.trn.hw8.utils.JsonDataProvider;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import static com.epam.trn.hw8.enums.ErrorCodes.*;
+import static com.epam.trn.hw8.constans.ErrorCodes.*;
 
 public class CheckText {
 
@@ -23,15 +23,13 @@ public class CheckText {
             dataProvider = "ignoreDigitsOptionTestData", dataProviderClass = JsonDataProvider.class)
     public void checkTextWithIgnoreDigitsOption(RequestDto request) {
         ResultDto[] actual = checkTextService.checkTextWithParams(request);
-
         new CheckTextAssertions(actual).verifyThatThereIsNoError();
     }
 
-    @Test(description = "Check text without any options",
+    @Test(description = "CheckText method without any options",
             dataProvider = "checkTextWithoutOptions", dataProviderClass = JsonDataProvider.class)
     public void CheckTextWithoutOptions(RequestDto request) {
         ResultDto[] actual = checkTextService.checkTextWithParams(request);
-
         new CheckTextAssertions(actual).verifyErrorCode(ERROR_UNKNOWN_WORD.getCode())
                 .verifyIncorrectWords(request.getExpected());
     }
@@ -40,37 +38,22 @@ public class CheckText {
             dataProvider = "repeatWordTestData", dataProviderClass = JsonDataProvider.class)
     public void CheckTextWithFindRepeatWordsOption(RequestDto request) {
         ResultDto[] actual = checkTextService.checkTextWithParams(request);
-
         new CheckTextAssertions(actual).verifyErrorCode(ERROR_REPEAT_WORD.getCode())
                 .verifyIncorrectWords(request.getExpected());
-    }
-
-    @Test(description = "Check text with repeated words without FIND_REPEAT_WORD option",
-            dataProvider = "repeatWordTestData", dataProviderClass = JsonDataProvider.class)
-    public void CheckTextWithoutFindRepeatWordsOption(RequestDto request) {
         request.setOptions("0");
-        ResultDto[] actual = checkTextService.checkTextWithParams(request);
-
-        new CheckTextAssertions(actual).verifyThatThereIsNoError().
-                verifyThatThereIsNoThatErrorCode(ERROR_REPEAT_WORD.getCode());
+        actual = checkTextService.checkTextWithParams(request);
+        new CheckTextAssertions(actual).verifyThatThereIsNoError()
+                .verifyThatThereIsNoThatErrorCode(ERROR_REPEAT_WORD.getCode());
     }
 
-    @Test(description = "CheckTexts with IGNORE_CAPITALIZATION option",
+    @Test(description = "CheckText method with IGNORE_CAPITALIZATION option",
             dataProvider = "ignoreCapitalizationTestData", dataProviderClass = JsonDataProvider.class)
     public void CheckTextsWithIgnoreCapitalizationOption(RequestDto request) {
         ResultDto[] actual = checkTextService.checkTextWithParams(request);
-
         new CheckTextAssertions(actual)
                 .verifyThatThereIsNoThatErrorCode(ERROR_CAPITALIZATION.getCode());
-    }
-
-
-    @Test(description = "Check incorrect text without IGNORE_CAPITALIZATION option",
-            dataProvider = "ignoreCapitalizationTestData", dataProviderClass = JsonDataProvider.class)
-    public void CheckTextWithoutIgnoreCapitalizationOption(RequestDto request) {
         request.setOptions("0");
-        ResultDto[] actual = checkTextService.checkTextWithParams(request);
-
+        actual = checkTextService.checkTextWithParams(request);
         new CheckTextAssertions(actual)
                 .verifyErrorCode(ERROR_CAPITALIZATION.getCode())
                 .verifyIncorrectWords(request.getExpected());

@@ -1,15 +1,12 @@
 package com.epam.trn.hw8.dto;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
 
 import java.util.ArrayList;
 
 @Data
 @AllArgsConstructor
-@Getter
-@Setter
-@ToString
-@EqualsAndHashCode
 public class ResultDto {
 
     private String code;
