@@ -1,8 +1,9 @@
 package com.epam.trn.hw8.service;
 
 import com.epam.trn.hw8.dto.RequestDto;
-import com.google.gson.Gson;
 import com.epam.trn.hw8.dto.ResultDto;
+import com.google.gson.Gson;
+
 import java.util.HashMap;
 import java.util.Map;
 

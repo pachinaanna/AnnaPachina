@@ -8,6 +8,7 @@ import java.io.IOException;
 public class JsonDataProvider {
 
     protected JsonDataReader reader;
+
     {
         try {
             reader = new JsonDataReader();
@@ -24,7 +25,10 @@ public class JsonDataProvider {
 
     @DataProvider(name = "checkTextWithoutOptions")
     public Object[][] checkTextData() {
-        return new Object[][] { {new RequestDto("I dont know what to write", "", "", "", "dont")},
+        return new Object[][]{
+                {new RequestDto("I dont know what to write", "", "", "", "dont")},
+                {new RequestDto("Where is my gacket?", "", "", "", "gacket")},
+                {new RequestDto("Sistem doesn't work", "", "", "", "Sistem")}
         };
     }
 

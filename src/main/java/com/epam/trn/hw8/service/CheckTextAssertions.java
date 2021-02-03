@@ -1,6 +1,7 @@
 package com.epam.trn.hw8.service;
 
 import com.epam.trn.hw8.dto.ResultDto;
+
 import java.util.stream.IntStream;
 
 import static org.testng.Assert.assertEquals;
@@ -8,7 +9,7 @@ import static org.testng.Assert.assertNotEquals;
 
 public class CheckTextAssertions {
 
-    private ResultDto[] results;
+    private final ResultDto[] results;
 
     public CheckTextAssertions(ResultDto[] response) {
         this.results = response;

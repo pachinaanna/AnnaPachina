@@ -1,8 +1,5 @@
 package com.epam.trn.hw8.service;
 
-import static io.restassured.RestAssured.*;
-import static com.epam.trn.hw8.utils.SelectProperties.*;
-
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
@@ -11,13 +8,15 @@ import org.hamcrest.Matchers;
 
 import java.util.Map;
 
+import static com.epam.trn.hw8.utils.SelectProperties.getTestProperties;
+import static io.restassured.RestAssured.given;
+
 public class CommonService {
 
-    private RequestSpecification REQUEST_SPECIFICATION;
+    private final RequestSpecification REQUEST_SPECIFICATION;
 
     public CommonService() {
         REQUEST_SPECIFICATION = new RequestSpecBuilder()
-//                .setBaseUri("http://speller.yandex.net/services/spellservice.json")
                 .setBaseUri(getTestProperties().getProperty("base.url"))
                 .build();
     }
@@ -42,6 +41,6 @@ public class CommonService {
         }
 
         return postText(specification, uri, text);
-     }
+    }
 
 }

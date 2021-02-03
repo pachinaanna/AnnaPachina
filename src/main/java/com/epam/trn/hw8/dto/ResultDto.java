@@ -1,11 +1,8 @@
 package com.epam.trn.hw8.dto;
 
-import java.util.ArrayList;
-
-import lombok.AllArgsConstructor;
-import lombok.Data;
-
 import lombok.*;
+
+import java.util.ArrayList;
 
 @Data
 @AllArgsConstructor

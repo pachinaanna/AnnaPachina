@@ -4,9 +4,9 @@ import com.epam.trn.hw8.dto.RequestDto;
 import com.epam.trn.hw8.dto.ResultDto;
 import com.epam.trn.hw8.service.CheckTextAssertions;
 import com.epam.trn.hw8.service.CheckTextService;
+import com.epam.trn.hw8.utils.JsonDataProvider;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import com.epam.trn.hw8.utils.JsonDataProvider;
 
 import static com.epam.trn.hw8.enums.ErrorCodes.*;
 
